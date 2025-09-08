@@ -1,0 +1,28 @@
+
+
+Em 1940, o Conselho de Relações Exteriores em Washington, DC decidiu que Hitler iria perder a guerra e que deveriam começar a se preparar para o próximo império, um império americano. Seria composto por toda a área que Hitler havia desejado, incluindo o Reino Unido, toda a América do Norte, Nova Zelândia, Austrália e grande parte do sudeste do anel do Pacífico. E eles têm trabalhado nisso desde então. Eles se uniram a outras organizações, incluindo a organização dos construtores pós-guerra na Europa, que é a mais secreta e uma das mais poderosas, se não a mais poderosa organização do mundo hoje. E então, a terceira, a Comissão Trilateral, formada depois do ascenso do Japão. Essas três têm trabalhado juntas e eu as chamo em meus livros de "as três irmãs". Elas são a raiz do que eu agora chamo de cabala e outras pessoas também a chamam assim. A cabala inclui o cartel bancário, o cartel de petróleo, as grandes corporações transnacionais, muitas agências de inteligência, incluindo a CIA, FBI, NSA e algumas estrangeiras, a Mi6 do Reino Unido e Mossad de Israel e uma grande fatia do exército americano. E lá está a cabala. E eles têm sido os responsáveis pelos EUA nas últimas cinquenta anos, a ponto de os presidentes terem sido pouco mais do que marionetes e o Congresso não ter tido ideia do que estava acontecendo.
+
+Depois da Segunda Guerra Mundial, houve uma operação chamada Operação Paperclip, aprovada pelo presidente Truman para trazer cientistas nazistas para os Estados Unidos para ajudar, presumivelmente na Guerra Fria que se seguiria. O presidente Truman concordou com a condição de que nenhum dos cientistas fosse membro ativo do Partido Nazi, mas as forças armadas que estavam fazendo o convite não prestaram atenção ao presidente. Como ex-ministro da Defesa Nacional, eu sei como isso funciona. E eles recrutaram os que queriam. Eles deram novos nomes, novas histórias e altos cargos nos Estados Unidos nas instituições militares e civis. Eles estavam trabalhando em mísseis e novos sistemas de armas de vários tipos.
+
+Depois dos dois acidentes de OVNIs em Roswell, em 4 de julho de 1947, uma das máquinas foi recuperada o suficientemente intacta para ser analisada, e eles começaram a reverter o projeto. Logo, a operação foi transferida para Nevada. O presidente na época era Eisenhower, e ele queria saber o que estavam fazendo lá, mas eles não lhe contaram. Ele ameaçou enviar o primeiro exército de Colorado, e eles cederam, permitindo que quatro membros confiáveis da CIA visitassem Colorado e vissem o que estava acontecendo. O que estava acontecendo era exatamente o que eles esperavam, ou seja, a análise de um dos veículos da área de Roswell. Eu não acho que houve um presidente desde então, na verdade, Truman, que estava totalmente por dentro.
+
+O presidente Eisenhower expressou sua frustração em seu discurso final para o povo americano, na época em que estava se aposentando da vida pública. Ele disse: "Cuidado com o complexo militar-industrial". E o problema é que não prestamos atenção a ele. Um testemunho ocular que trabalhava na companhia do Presidente Eisenhower disse que ele realmente estava preocupado com o arquivo de ET ter caído nas mãos erradas. Essa era sua verdadeira preocupação. E eu gostaria que ele tivesse dito, mas acho que foi quando o COVID começou realmente com força. Bem, muita água passou por debaixo da ponte desde então. Este cabala, seu objetivo final é um governo mundial, eles estão chamando de Novo Ordem Mundial, que é não eleito e responsável apenas por eles.
+
+Isso é o que eles estão fazendo. E eles estão bem encaminhados para fazê-lo. E, você sabe, eles são espertos. Disseram: não faremos o que Hitler fez e tentaremos dominar todo esse mundo, esses países, por meios militares. Faremos isso usando nossos cérebros e usando o sistema monetário para esmagar os diversos países ao ponto em que as pessoas estarão dispostas a aceitar um governo militar.
+E usaremos acordos comerciais, que na verdade não são acordos comerciais, mas que são, na verdade, transferências de poder das pessoas eleitas para o cartel bancário e as empresas transnacionais. E eles colocaram uma coisa nos acordos comerciais que é chamada de mecanismo de solução de disputas.
+
+E na verdade funciona desta maneira: se algum governo, como um governo provincial ou estadual nos Estados Unidos, fizer algo que afete os lucros ou lucros potenciais de uma empresa estrangeira, eles podem processar o governo do Canadá por lucros perdidos ou até mesmo lucros potenciais perdidos. Pode acreditar que eles têm mais direitos no Canadá do que os cidadãos canadenses? E claro que funciona da mesma forma nos Estados Unidos. É errado em princípio. Duas palavras finais.
+A razão pela qual eles não querem que saibamos o que eles estão fazendo é porque muitos de nós sabemos o que eles estão fazendo. Eles poderiam não conseguir se safar.
+
+
+[
+Se você está fazendo alguma obra para o Senhor e está difícil, é normal se indagar:
+
+Por que Deus não está me ajudando? Por que o ímpio prospera enquanto eu estou aqui fazendo a obra de Deus e sofrendo tantos revezes?
+
+Lembre-se: a obra que você está fazendo é por Ele e para Ele, não é por você e para você. Se fosse fácil seguir a Deus, todos seguiriam. Se Deus usasse a obra d'Ele como moeda de troca para bençãos imediatas, todos fariam a obra d'Ele.
+
+Se você está fazendo a obra de Deus, certifique-se de fazê-la não por bençãos futuras, mas porque é o certo a se fazer. Deste modo você não se frustrará tanto.
+
+Você é da Luz? Conclua a sua obra! Faça o que é certo e assuma as consequências!
+]

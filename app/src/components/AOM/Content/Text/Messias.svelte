@@ -1,0 +1,1 @@
+[explicar a diferença entre Jesus e o messias que resolve tudo para vc sem q vc tenha q fazer nada]

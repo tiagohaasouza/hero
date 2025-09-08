@@ -1,0 +1,132 @@
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Imports
+------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@import 'vars';
+@import 'transitions';
+@import './components/components';
+@import '../book/style';
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Global
+------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.green,
+.online {
+  background-color: @green;
+}
+
+.gray,
+.offline {
+  background-color: @gray;
+}
+
+.yellow,
+.away {
+  background-color: @yellow;
+}
+
+.red,
+.busy {
+  background-color: @red;
+}
+
+.green-text,
+.online-text {
+  color: @green;
+}
+
+.gray-text,
+.offline-text {
+  color: @gray;
+}
+
+.yellow-text,
+.away-text {
+  color: @yellow;
+}
+
+.red-text,
+.busy-text {
+  color: @red;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+body.is-loading,
+body.is-loading * {
+  pointer-events: none !important;
+  user-select: none !important;
+}
+:root {
+  --gold: #ffb338;
+  --light-shadow: #77571d;
+  --dark-shadow: #3e2904;
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Layout
+------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.header-search-input {
+  width: 100%;
+  min-width: 50vw;
+}
+.v-main {
+  background-color: #f4f5fa;
+}
+
+.background-overlay {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.v-theme--dark {
+  .background-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.v-theme--dark {
+  .v-main {
+    background-color: #121212;
+  }
+}
+
+.navigation-drawer-full-width {
+  width: 100% !important;
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Components
+------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.router-link,
+.router-link-active {
+  text-decoration: none;
+}
+
+.xterm-helper-textarea {
+  visibility: hidden !important;
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Animation
+------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blink {
+  animation: blink 1.5s infinite;
+}

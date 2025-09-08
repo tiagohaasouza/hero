@@ -1,0 +1,599 @@
+{
+  "metadata": {
+    "code": "es",
+    "name": "Español",
+    "flag": "/assets/flags/es.svg",
+    "country": "España",
+    "timezone": "Europe/Madrid"
+  },
+  "dateTimeFormats": {
+    "long": {
+      "year": "numeric",
+      "month": "long",
+      "day": "numeric",
+      "weekday": "long"
+    },
+    "short": {
+      "year": "numeric",
+      "month": "short",
+      "day": "numeric"
+    },
+    "time": {
+      "hour": "numeric",
+      "minute": "numeric"
+    }
+  },
+  "numberFormats": {
+    "currency": {
+      "style": "currency",
+      "currency": "EUR"
+    },
+    "decimal": {
+      "style": "decimal",
+      "minimumFractionDigits": 2
+    }
+  },
+  "dialog": {
+    "areYouSure": "¿Estás seguro?"
+  },
+  "library": {
+    "label": "Biblioteca | Bibliotecas",
+    "singular": "Biblioteca",
+    "plural": "Bibliotecas"
+  },
+  "menu": {
+    "label": "Menú | Menús",
+    "singular": "Menú",
+    "plural": "Menús",
+    "open": "Abrir menú",
+    "close": "Cerrar menú"
+  },
+  "editor": {
+    "label": "Editor | Editores",
+    "singular": "Editor",
+    "plural": "Editores",
+    "sourceCode": "Código fuente"
+  },
+  "book": {
+    "label": "Libro | Libros",
+    "singular": "Libro",
+    "plural": "Libros",
+    "add": "Agregar Libro",
+    "edit": "Editar Libro",
+    "delete": "Eliminar Libro",
+    "title": "Título del Libro",
+    "author": "Autor del Libro",
+    "category": "Categoría del Libro",
+    "price": "Precio del Libro",
+    "quantity": "Cantidad del Libro",
+    "published": "Publicado en",
+    "pages": "Páginas del Libro",
+    "isbn": "ISBN del Libro",
+    "summary": "Resumen del Libro",
+    "cover": "Portada del Libro",
+    "back": "Contraportada del Libro",
+    "next": "Siguiente Libro",
+    "subtitle": "Subtítulo del Libro",
+    "publisher": "Editorial del Libro",
+    "language": "Idioma del Libro",
+    "format": "Formato del Libro",
+    "read": {
+      "label": "Leer",
+      "singular": "Leer libro",
+      "plural": "Leer libros",
+      "all": "Leer todos los libros",
+      "one": "Leer un libro"
+    }
+  },
+  "user": {
+    "label": "Usuario | Usuarios",
+    "singular": "Usuario",
+    "plural": "Usuarios",
+    "dashboard": "Panel de control",
+    "menu": {
+      "label": "Menú | Menús",
+      "singular": "Menú",
+      "plural": "Menús",
+      "userMenu": "Menú del usuario"
+    },
+    "account": {
+      "label": "Cuenta | Cuentas",
+      "singular": "Cuenta",
+      "plural": "Cuentas"
+    },
+    "manageAccount": "Gestionar tu cuenta",
+    "downloads": {
+      "label": "Descarga | Descargas",
+      "singular": "Descarga",
+      "plural": "Descargas"
+    },
+    "subscriptions": {
+      "label": "Suscripción | Suscripciones",
+      "singular": "Suscripción",
+      "plural": "Suscripciones"
+    },
+    "history": "Historial",
+    "lastActivity": "Última actividad",
+    "lastAccess": "Último acceso",
+    "lastAccessIn": "Tu último acceso fue el",
+    "status": {
+      "label": "Estado del usuario | Estados de los usuarios",
+      "singular": "Estado del usuario",
+      "plural": "Estados de los usuarios",
+      "online": "En línea",
+      "offline": "Desconectado",
+      "away": "Ausente",
+      "busy": "Ocupado"
+    },
+    "role": {
+      "super": {
+        "label": "Súper | Súpers",
+        "singular": "Súper",
+        "plural": "Súpers"
+      },
+      "admin": {
+        "label": "Administrador | Administradores",
+        "singular": "Administrador",
+        "plural": "Administradores"
+      },
+      "writer": {
+        "label": "Escritor | Escritores",
+        "singular": "Escritor",
+        "plural": "Escritores"
+      },
+      "editor": {
+        "label": "Editor | Editores",
+        "singular": "Editor",
+        "plural": "Editores"
+      },
+      "user": {
+        "label": "Usuario | Usuarios",
+        "singular": "Usuario",
+        "plural": "Usuarios"
+      },
+      "visitor": {
+        "label": "Visitante | Visitantes",
+        "singular": "Visitante",
+        "plural": "Visitantes"
+      }
+    }
+  },
+  "notification": {
+    "label": "Notificación | Notificaciones",
+    "singular": "Notificación",
+    "plural": "Notificaciones",
+    "seeAll": "Ver todas las notificaciones",
+    "allLoaded": "Todas las notificaciones han sido cargadas",
+    "showNotifications": "Mostrar notificaciones"
+  },
+  "chat": {
+    "label": "Chat | Chats",
+    "singular": "Chat",
+    "plural": "Chats",
+    "show": "Mostrar chat",
+    "allLoaded": "Todos los chats han sido cargados",
+    "startNewChat": "Iniciar nuevo chat",
+    "noChatsAvailable": "No hay chats disponibles",
+    "sendMessage": "Enviar mensaje",
+    "newMessage": "Nuevo mensaje"
+  },
+  "priority": {
+    "low": "Baja",
+    "medium": "Media",
+    "high": "Alta",
+    "urgent": "Urgente"
+  },
+  "social": {
+    "label": "Social | Sociales",
+    "singular": "Social",
+    "plural": "Sociales",
+    "friends": {
+      "label": "Amigo | Amigos",
+      "singular": "Amigo",
+      "plural": "Amigos"
+    }
+  },
+  "commerce": {
+    "label": "Comercio | Comercios",
+    "singular": "Comercio",
+    "plural": "Comercios",
+    "growth": "Crecimiento",
+    "sales": {
+      "label": "Venta | Ventas",
+      "singular": "Venta",
+      "plural": "Ventas"
+    },
+    "projections": {
+      "label": "Proyección | Proyecciones",
+      "singular": "Proyección",
+      "plural": "Proyecciones"
+    },
+    "product": {
+      "label": "Producto | Productos",
+      "singular": "Producto",
+      "plural": "Productos",
+      "addProduct": "Agregar Producto",
+      "editProduct": "Editar Producto",
+      "deleteProduct": "Eliminar Producto",
+      "productName": "Nombre del Producto",
+      "productPrice": "Precio del Producto",
+      "productDescription": "Descripción del Producto",
+      "productCategory": "Categoría del Producto"
+    },
+    "order": {
+      "label": "Pedido | Pedidos",
+      "singular": "Pedido",
+      "plural": "Pedidos",
+      "orderNumber": "Número de Pedido",
+      "orderDate": "Fecha de Pedido",
+      "orderStatus": "Estado del Pedido",
+      "orderTotal": "Total del Pedido",
+      "orderDetails": "Detalles del Pedido"
+    },
+    "customer": {
+      "label": "Cliente | Clientes",
+      "singular": "Cliente",
+      "plural": "Clientes",
+      "customerName": "Nombre del Cliente",
+      "customerEmail": "Correo electrónico del Cliente",
+      "customerPhone": "Teléfono del Cliente",
+      "customerAddress": "Dirección del Cliente"
+    }
+  },
+  "blog": {
+    "label": "Blog | Blogs",
+    "singular": "Blog",
+    "plural": "Blogs",
+    "author": {
+      "label": "Autor | Autores",
+      "singular": "Autor",
+      "plural": "Autores"
+    },
+    "post": {
+      "label": "Publicación | Publicaciones",
+      "singular": "Publicación",
+      "plural": "Publicaciones",
+      "addPost": "Agregar Publicación",
+      "editPost": "Editar Publicación",
+      "deletePost": "Eliminar Publicación",
+      "postTitle": "Título de la Publicación",
+      "postContent": "Contenido de la Publicación",
+      "postCategory": "Categoría de la Publicación",
+      "postTags": "Etiquetas de la Publicación"
+    },
+    "comment": {
+      "label": "Comentario | Comentarios",
+      "singular": "Comentario",
+      "plural": "Comentarios",
+      "addComment": "Agregar Comentario",
+      "editComment": "Editar Comentario",
+      "deleteComment": "Eliminar Comentario",
+      "commentAuthor": "Autor del Comentario",
+      "commentContent": "Contenido del Comentario"
+    },
+    "category": {
+      "label": "Categoría | Categorías",
+      "singular": "Categoría",
+      "plural": "Categorías",
+      "addCategory": "Agregar Categoría",
+      "editCategory": "Editar Categoría",
+      "deleteCategory": "Eliminar Categoría",
+      "categoryName": "Nombre de la Categoría"
+    },
+    "tag": {
+      "label": "Etiqueta | Etiquetas",
+      "singular": "Etiqueta",
+      "plural": "Etiquetas",
+      "addTag": "Agregar Etiqueta",
+      "editTag": "Editar Etiqueta",
+      "deleteTag": "Eliminar Etiqueta",
+      "tagName": "Nombre de la Etiqueta"
+    }
+  },
+  "authentication": {
+    "welcomeBack": "¡Bienvenido de nuevo!",
+    "logIntoAccount": "Inicia sesión en tu cuenta",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "logIn": "Iniciar sesión",
+    "orContinueWith": "O continuar con",
+    "dontHaveAccount": "¿No tienes una cuenta?",
+    "signUp": "Registrarse",
+    "createAccount": "Crear cuenta",
+    "signUpToGetStarted": "Regístrate para empezar",
+    "confirmPassword": "Confirmar Contraseña",
+    "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+    "resetPassword": "Restablecer Contraseña",
+    "enterYourEmail": "Ingresa tu correo electrónico para restablecer tu contraseña",
+    "sendResetLink": "Enviar enlace de restablecimiento",
+    "enterCode": "Ingresa el código enviado a tu correo",
+    "confirmCode": "Confirmar código",
+    "newPassword": "Nueva Contraseña",
+    "confirmNewPassword": "Confirmar nueva contraseña",
+    "saveNewPassword": "Guardar nueva contraseña",
+    "code": "Código de autenticación",
+    "verifySMS": "Verificar SMS",
+    "enterSMSCode": "Ingresa el código enviado por SMS",
+    "verifyEmail": "Verificar Correo",
+    "enterEmailCode": "Ingresa el código enviado a tu correo",
+    "verifyAuthenticatorApp": "Verificar App Autenticador",
+    "enterAuthenticatorCode": "Ingresa el código de la app autenticadora",
+    "sendVerificationCode": "Enviar código de verificación",
+    "verify": "Verificar",
+    "verifyAccount": "Verificar Cuenta",
+    "enterVerificationCode": "Ingresa el código de verificación enviado",
+    "resendCode": "Reenviar código"
+  },
+  "layout": {
+    "screen": {
+      "label": "Pantalla | Pantallas",
+      "singular": "Pantalla",
+      "plural": "Pantallas",
+      "fullscreen": {
+        "label": "Pantalla completa",
+        "singular": "Pantalla completa",
+        "plural": "Pantallas completas",
+        "enter": "Entrar en pantalla completa",
+        "exit": "Salir de pantalla completa"
+      }
+    },
+    "theme": {
+      "label": "Tema | Temas",
+      "singular": "Tema",
+      "plural": "Temas",
+      "switchTheme": "Cambiar tema",
+      "current": "Tema actual",
+      "toggleDarkMode": "Alternar modo oscuro",
+      "toggleLightMode": "Alternar modo claro",
+      "mode": {
+        "label": "Modo | Modos",
+        "singular": "Modo",
+        "plural": "Modos",
+        "dark": "Oscuro",
+        "light": "Claro",
+        "switchToLight": "Cambiar a modo claro",
+        "switchToDark": "Cambiar a modo oscuro"
+      }
+    }
+  },
+  "localization": {
+    "language": {
+      "label": "Idioma | Idiomas",
+      "singular": "Idioma",
+      "plural": "Idiomas",
+      "change": "Cambiar idioma",
+      "filter": "Filtrar idioma"
+    },
+    "yesterday": "Ayer",
+    "today": "Hoy",
+    "tomorrow": "Mañana",
+    "date": {
+      "long": "dddd, D [de] MMMM [de] YYYY",
+      "short": "DD/MM/YYYY",
+      "time": "HH:mm",
+      "full": "dddd, D [de] MMMM [de] YYYY [a las] HH:mm",
+      "months": [
+        "Enero",
+        "Febrero",
+        "Marzo",
+        "Abril",
+        "Mayo",
+        "Junio",
+        "Julio",
+        "Agosto",
+        "Septiembre",
+        "Octubre",
+        "Noviembre",
+        "Diciembre"
+      ],
+      "monthsShort": [
+        "Ene",
+        "Feb",
+        "Mar",
+        "Abr",
+        "May",
+        "Jun",
+        "Jul",
+        "Ago",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dic"
+      ],
+      "weekdays": ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
+      "weekdaysShort": ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
+      "weekdaysMin": ["D", "L", "M", "X", "J", "V", "S"]
+    },
+    "units": {
+      "day": {
+        "label": "día | días",
+        "singular": "día",
+        "plural": "días"
+      },
+      "hour": {
+        "label": "hora | horas",
+        "singular": "hora",
+        "plural": "horas"
+      },
+      "minute": {
+        "label": "minuto | minutos",
+        "singular": "minuto",
+        "plural": "minutos"
+      },
+      "second": {
+        "label": "segundo | segundos",
+        "singular": "segundo",
+        "plural": "segundos"
+      }
+    },
+    "timezone": {
+      "label": "Zona Horaria | Zonas Horarias",
+      "singular": "Zona Horaria",
+      "plural": "Zonas Horarias",
+      "change": "Cambiar Zona Horaria"
+    }
+  },
+  "language": {
+    "name": "Español",
+    "select": "Seleccionar idioma"
+  },
+  "online": "En línea",
+  "pricing": {
+    "label": "Precio | Precios",
+    "singular": "Precio",
+    "plural": "Precios"
+  },
+  "faq": "Preguntas Frecuentes",
+  "search": "Buscar",
+  "loading": "Cargando...",
+  "logout": "Cerrar sesión",
+  "login": "Iniciar sesión",
+  "noMoreItems": "No hay más elementos",
+  "notFound": "No encontrado",
+  "summary": "Resumen",
+  "statistics": "Estadísticas",
+  "copyright": {
+    "label": "Derechos de autor",
+    "allRightsReserved": "Todos los derechos reservados"
+  },
+  "to": {
+    "label": "A",
+    "select": "Para seleccionar",
+    "close": "Para cerrar"
+  },
+  "new": {
+    "label": "Nuevo | Nuevos",
+    "singular": "Nuevo",
+    "plural": "Nuevos",
+    "female": {
+      "label": "Nueva | Nuevas",
+      "singular": "Nueva",
+      "plural": "Nuevas"
+    }
+  },
+  "colors": {
+    "label": "Color | Colores",
+    "singular": "Color",
+    "plural": "Colores",
+    "red": "Rojo",
+    "green": "Verde",
+    "blue": "Azul",
+    "yellow": "Amarillo",
+    "orange": "Naranja",
+    "purple": "Morado",
+    "black": "Negro",
+    "white": "Blanco",
+    "gray": "Gris"
+  },
+  "chart": {
+    "label": "Gráfico | Gráficos",
+    "singular": "Gráfico",
+    "plural": "Gráficos",
+    "bar": "Gráfico de Barras",
+    "bubble": "Gráfico de Burbujas",
+    "line": "Gráfico de Líneas",
+    "pie": "Gráfico de Pastel",
+    "area": "Gráfico de Área",
+    "scatter": "Gráfico de Dispersión",
+    "doughnut": "Gráfico de Donas",
+    "polar": "Gráfico Polar",
+    "radar": "Gráfico de Radar",
+    "apexCharts": "Gráficos Apex",
+    "donut": "Gráfico de Donas",
+    "heatmap": "Gráfico de Mapa de Calor",
+    "radialbar": "Gráfico de Barras Radiales",
+    "candlestick": "Gráfico de Velas",
+    "column": "Gráfico de Columnas",
+    "mixed": "Gráfico Mixto",
+    "funnel": "Gráfico de Embudo",
+    "boxplot": "Gráfico de Caja",
+    "treemap": "Gráfico de Árbol",
+    "slope": "Gráfico de Pendiente",
+    "range": "Gráfico de Rango",
+    "timeline": "Gráfico de Línea de Tiempo"
+  },
+  "profile": {
+    "label": "Perfil | Perfiles",
+    "singular": "Perfil",
+    "plural": "Perfiles"
+  },
+  "settings": {
+    "label": "Configuración | Configuraciones",
+    "singular": "Configuración",
+    "plural": "Configuraciones"
+  },
+  "greeting": {
+    "welcome": "Bienvenido",
+    "goodMorning": "Buenos días",
+    "goodAfternoon": "Buenas tardes",
+    "goodEvening": "Buenas noches",
+    "hello": "Hola"
+  },
+  "error": {
+    "404": {
+      "label": "Error 404",
+      "message": "Página no encontrada"
+    },
+    "500": {
+      "label": "Error 500",
+      "message": "Error interno del servidor"
+    },
+    "connection": {
+      "label": "Error de Conexión",
+      "message": "No se pudo conectar al servidor"
+    }
+  },
+  "graph": {
+    "label": "Gráfico | Gráficos",
+    "singular": "Gráfico",
+    "plural": "Gráficos",
+    "bar": "Gráfico de Barras",
+    "line": "Gráfico de Líneas",
+    "pie": "Gráfico de Pastel",
+    "area": "Gráfico de Área",
+    "scatter": "Gráfico de Dispersión"
+  },
+  "table": {
+    "label": "Tabla | Tablas",
+    "singular": "Tabla",
+    "plural": "Tablas",
+    "noData": "No hay datos disponibles",
+    "rowsPerPage": "Filas por página"
+  },
+  "message": {
+    "label": "Mensaje | Mensajes",
+    "singular": "Mensaje",
+    "plural": "Mensajes",
+    "success": "Operación realizada con éxito",
+    "error": "Ocurrió un error",
+    "warning": "Advertencia",
+    "info": "Información"
+  },
+  "dashboard": {
+    "label": "Panel | Paneles",
+    "singular": "Panel",
+    "plural": "Paneles",
+    "title": "Panel de administración",
+    "summary": "Resumen",
+    "orders": "Pedidos",
+    "newOrders": "Nuevos Pedidos",
+    "clients": "Clientes",
+    "newClients": "Nuevos Clientes",
+    "sales": "Ventas",
+    "growth": "Crecimiento",
+    "profit": "Ganancia",
+    "todayProfit": "Ganancia de Hoy",
+    "statistics": "Estadísticas",
+    "statusStatistics": "Estadísticas de Estado",
+    "incomeStatistics": "Estadísticas de Ingresos",
+    "transactions": "Transacciones",
+    "salesOrdersRevenue": "Ingresos de Pedidos de Venta",
+    "salesAnalytics": "Análisis de Ventas",
+    "cpu": "CPU",
+    "memory": "Memoria",
+    "monthlyIncrease": "Incremento Mensual",
+    "registerUser": "Registrar Usuario",
+    "premiumUser": "Usuario Premium"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "error": {
+    "404": {
+      "label": "Erro 404",
+      "message": "Página não encontrada"
+    },
+    "500": {
+      "label": "Erro 500",
+      "message": "Erro interno do servidor"
+    },
+    "connection": {
+      "label": "Erro de Conexão",
+      "message": "Não foi possível conectar ao servidor"
+    },
+    "locale": {
+      "label": "Localidade Inválida",
+      "message": "Localidade inválida"
+    },
+    "timeZone": {
+      "label": "Fuso Horário Inválido",
+      "message": "Fuso horário inválido"
+    },
+    "currency": {
+      "label": "Moeda Inválida",
+      "message": "Moeda inválida"
+    },
+    "dateFormat": {
+      "label": "Formato de Data Inválido",
+      "message": "Formato de data inválido"
+    },
+    "numberFormat": {
+      "label": "Formato de Número Inválido",
+      "message": "Formato de número inválido"
+    },
+    "dateTimeFormat": {
+      "label": "Formato de Data e Hora Inválido",
+      "message": "Formato de data e hora inválido"
+    },
+    "file": {
+      "label": "Erro de Arquivo",
+      "message": "Arquivo não encontrado"
+    },
+    "image": {
+      "label": "Erro de Imagem",
+      "message": "Imagem não encontrada"
+    },
+    "video": {
+      "label": "Erro de Vídeo",
+      "message": "Vídeo não encontrado"
+    },
+    "audio": {
+      "label": "Erro de Áudio",
+      "message": "Áudio não encontrado"
+    },
+    "i18nFile": {
+      "label": "Erro de Arquivo i18n",
+      "message": "Arquivo i18n não encontrado"
+    }
+  }
+}

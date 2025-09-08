@@ -1,0 +1,68 @@
+{
+  "book": {
+    "label": "Livro | Livros",
+    "add": "Adicionar Livro",
+    "edit": "Editar Livro",
+    "delete": "Excluir Livro",
+    "title": "Título do Livro",
+    "author": "Autor do Livro",
+    "category": "Categoria do Livro",
+    "price": "Preço do Livro",
+    "quantity": "Quantidade do Livro",
+    "published": "Publicado em",
+    "pages": "Páginas do Livro",
+    "isbn": "ISBN do Livro",
+    "summary": "Resumo do Livro",
+    "cover": "Capa do Livro",
+    "back": "Verso do Livro",
+    "next": "Próximo Livro",
+    "subtitle": "Subtítulo do Livro",
+    "publisher": "Editora do Livro",
+    "language": "Idioma do Livro",
+    "format": "Formato do Livro",
+    "bible": "Bíblia Sagrada",
+    "anonymous": "Anônimo",
+    "read": {
+      "label": "Ler",
+      "all": "Ler todos os livros",
+      "one": "Ler um livro"
+    },
+    "info": {
+      "label": "Informações do livro",
+      "author": "Autor",
+      "published": "Publicado",
+      "pages": "Páginas",
+      "isbn": "ISBN",
+      "language": "Idioma",
+      "format": "Formato",
+      "totalPages": "Total de Páginas",
+      "totalBooks": "Total de Livros",
+      "totalAuthors": "Total de Autores",
+      "totalCategories": "Total de Categorias",
+      "totalLanguages": "Total de Idiomas",
+      "totalFormats": "Total de Formatos"
+    },
+    "compile": {
+      "label": "Compilar",
+      "compile": "Compilar código",
+      "compileCode": "Compilar código",
+      "compiling": "Compilando...",
+      "compileSuccess": "Código compilado com sucesso",
+      "compileError": "Erro ao compilar código"
+    },
+    "build": {
+      "label": "Construir",
+      "build": "Construir livro",
+      "building": "Construindo livro...",
+      "buildSuccess": "Projeto construído com sucesso",
+      "buildError": "Erro ao construir projeto",
+      "percentage": "Porcentagem de construção",
+      "progress": "Progresso de construção",
+      "completed": "Construção concluída",
+      "time": "Tempo de construção",
+      "start": "Iniciar construção",
+      "stop": "Parar construção",
+      "run": "Executar construção"
+    }
+  }
+}

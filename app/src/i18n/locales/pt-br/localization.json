@@ -1,0 +1,102 @@
+{
+  "localization": {
+    "language": {
+      "label": "Idioma | Idiomas",
+      "change": "Alterar idioma",
+      "filter": "Filtrar idioma"
+    },
+    "yesterday": "Ontem",
+    "today": "Hoje",
+    "tomorrow": "Amanhã",
+    "date": {
+      "long": "dddd, D [de] MMMM [de] YYYY",
+      "short": "DD/MM/YYYY",
+      "time": "HH:mm",
+      "full": "dddd, D [de] MMMM [de] YYYY [às] HH:mm",
+      "months": [
+        "Janeiro",
+        "Fevereiro",
+        "Março",
+        "Abril",
+        "Maio",
+        "Junho",
+        "Julho",
+        "Agosto",
+        "Setembro",
+        "Outubro",
+        "Novembro",
+        "Dezembro"
+      ],
+      "monthsShort": [
+        "Jan",
+        "Fev",
+        "Mar",
+        "Abr",
+        "Mai",
+        "Jun",
+        "Jul",
+        "Ago",
+        "Set",
+        "Out",
+        "Nov",
+        "Dez"
+      ],
+      "weekdays": [
+        "Domingo",
+        "Segunda-feira",
+        "Terça-feira",
+        "Quarta-feira",
+        "Quinta-feira",
+        "Sexta-feira",
+        "Sábado"
+      ],
+      "weekdaysShort": ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
+      "weekdaysMin": ["D", "S", "T", "Q", "Q", "S", "S"]
+    },
+    "dateTimeFormats": {
+      "long": {
+        "year": "numeric",
+        "month": "long",
+        "day": "numeric",
+        "weekday": "long"
+      },
+      "short": {
+        "year": "numeric",
+        "month": "short",
+        "day": "numeric"
+      },
+      "time": {
+        "hour": "numeric",
+        "minute": "numeric"
+      }
+    },
+    "numberFormats": {
+      "currency": {
+        "style": "currency",
+        "currency": "BRL"
+      },
+      "decimal": {
+        "style": "decimal",
+        "minimumFractionDigits": 2
+      }
+    },
+    "units": {
+      "day": {
+        "label": "dia | dias"
+      },
+      "hour": {
+        "label": "hora | horas"
+      },
+      "minute": {
+        "label": "minuto | minutos"
+      },
+      "second": {
+        "label": "segundo | segundos"
+      }
+    },
+    "timezone": {
+      "label": "Fuso Horário | Fusos Horários",
+      "change": "Alterar Fuso Horário"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@i18n/*": ["src/i18n/*"],
+      "@script/*": ["src/script/*"],
+      "@script/Logos/Vue/App/Data/AppData": ["src/stubs/AppData.ts"],
+      "@app": ["src/app.d.ts"]
+    },
+    "lib": ["DOM", "ESNext"],
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "types": ["vite/client"]
+  },
+  "include": [
+    "src/i18n/index.ts",
+    "src/shims-logos.d.ts",
+    "src/app.d.ts",
+    "src/script/Logos/Vue/App/Data/AppData.ts"
+  ]
+}

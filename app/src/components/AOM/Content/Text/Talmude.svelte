@@ -1,0 +1,1 @@
+[narrar as blasfêmias e racismo]

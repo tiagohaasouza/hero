@@ -1,0 +1,278 @@
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------
+| imports
+------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+@import '../page-size-a4-portrait';
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------
+| vars
+------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+@background-color: #ffffff;
+@text-color: #333333;
+@heading-color: #222222;
+@quote-border-color: #cccccc;
+@accent-color: #007bff;
+
+@font-heading: 'Libre Baskerville', serif;
+@font-body: 'Open Sans', sans-serif;
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------
+| aom
+------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.aom {
+  color: @text-color;
+  font-family: @font-body;
+  line-height: 1.75;
+  padding: 0;
+
+  .book-pages-container,
+  .book-original-content-container {
+    h1:first-child {
+      font-size: 2.5em;
+      padding: 0.5em;
+      width: 100%;
+      border-bottom: 1px solid;
+      margin-bottom: 30px;
+    }
+  }
+
+  .book-pages,
+  .book-original-content {
+    background-repeat: repeat;
+    padding: 50px;
+  }
+
+  .book-original-content {
+    @firstColor: #ccc;
+
+    background-image:
+      linear-gradient(@firstColor 1px, transparent 1px),
+      linear-gradient(to right, @firstColor 1px, transparent 1px);
+    background-size: calc(100vw / 50) calc(100vw / 50);
+    background-color: #ebf1f3;
+
+    border-right: 1px solid @firstColor;
+  }
+
+  .book-pages {
+    @firstColor: #eee;
+    @secondColor: #ccc;
+    @size: calc(100vw / 25);
+
+    background-image: repeating-conic-gradient(@firstColor 0% 25%, @secondColor 0% 50%);
+    background-position:
+      0 0,
+      @size @size;
+    background-size: @size @size;
+    background-color: @secondColor;
+
+    border-right: 1px solid @firstColor;
+  }
+
+  .book-dimension-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 2px 4px;
+    border-radius: 3px;
+    pointer-events: none;
+  }
+
+  .index-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 10px;
+    background: red;
+    color: white;
+    padding: 2px 4px;
+    border-radius: 3px;
+    pointer-events: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: @heading-color;
+    font-family: @font-heading;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    padding-bottom: 0.5em;
+  }
+
+  h2 {
+    font-size: 2em;
+    padding-bottom: 0.4em;
+  }
+
+  h3 {
+    font-size: 1.75em;
+    padding-bottom: 0.3em;
+  }
+
+  h4 {
+    font-size: 1.5em;
+  }
+
+  h5 {
+    font-size: 1.25em;
+  }
+
+  h6 {
+    font-size: 1em;
+  }
+
+  p {
+    margin: 0.5em 0;
+    text-indent: 1.5em;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  ul {
+    margin: 1.5em 0;
+    padding-left: 1.5em;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2em 0;
+  }
+
+  th,
+  td {
+    border: 1px solid @quote-border-color;
+    padding: 0.75em;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  th {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  a {
+    color: @accent-color;
+    text-decoration: underline;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: darken(@accent-color, 10%);
+  }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background: @heading-color;
+    margin: 2em 0;
+  }
+
+  figcaption {
+    text-align: center;
+    font-style: italic;
+  }
+
+  blockquote {
+    border-left: 4px solid @quote-border-color;
+
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    color: #4a4a4a;
+    border-left: 4px solid #b3b3b3;
+    padding-left: 16px;
+    margin: 20px 0;
+    line-height: 1.6;
+
+    cite {
+      display: block;
+      text-align: right;
+      font-style: normal;
+      font-size: 0.9em;
+      color: #7a7a7a;
+      margin-top: 10px;
+    }
+
+    .quote-center {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      height: 100vh;
+      color: #fff;
+      font-family: 'Georgia', serif;
+      font-size: 2.5rem;
+      font-weight: bold;
+      z-index: 2;
+      line-height: 1.4;
+
+      cite {
+        display: block;
+        margin-top: 30px;
+        font-size: 1.5rem;
+        font-style: italic;
+        font-weight: normal;
+        color: #eaeaea;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.component-caption {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  border-radius: 3px;
+  max-width: 80%;
+  word-wrap: break-word;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.book-content-wrapper,
+.exceeded-height {
+  position: relative;
+  border: 2px dashed black;
+}
+
+.book-content-wrapper {
+  background: #1de9b6;
+}
+
+.exceeded-height {
+  background: #ff8a80;
+}

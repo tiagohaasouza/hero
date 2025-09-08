@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+@background-color: #f0f0f0; /* Fundo cinza claro */
+@text-color: #333333; /* Cor escura para o texto */
+@heading-color: #1e90ff; /* Azul metálico para títulos */
+@quote-border-color: #1e90ff;
+@accent-color: #00bcd4; /* Cores frias para detalhes */
+
+@font-heading: 'Exo 2', sans-serif; /* Fonte futurística para títulos */
+@font-body: 'Roboto', sans-serif; /* Fonte limpa e moderna para o corpo */
+
+.aom {
+  background-color: @background-color;
+  color: @text-color;
+  font-family: @font-body;
+  line-height: 1.7;
+  padding: 2em;
+
+  /* Títulos */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: @heading-color;
+    font-family: @font-heading;
+    margin: 0.8em 0;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    border-bottom: 3px solid @accent-color;
+    padding-bottom: 0.2em;
+  }
+
+  h2 {
+    font-size: 2em;
+    border-bottom: 2px solid @accent-color;
+    padding-bottom: 0.2em;
+  }
+
+  h3 {
+    font-size: 1.75em;
+    border-bottom: 1px solid @accent-color;
+    padding-bottom: 0.2em;
+  }
+
+  /* Parágrafos */
+  p {
+    margin: 1.5em 0;
+  }
+
+  /* Imagens */
+  img {
+    border: 1px solid @text-color;
+    border-radius: 3px;
+    margin: 1em 0;
+    max-width: 100%;
+  }
+
+  /* Citações */
+  blockquote {
+    border-left: 3px solid @quote-border-color;
+    padding-left: 1em;
+    background-color: rgba(30, 144, 255, 0.1);
+    font-style: italic;
+    margin: 1.5em 0;
+  }
+
+  /* Listas */
+  ul,
+  ol {
+    margin: 1.5em 0;
+    padding-left: 1.5em;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+  }
+
+  /* Links */
+  a {
+    color: @accent-color;
+    text-decoration: underline;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: darken(@accent-color, 10%);
+  }
+
+  /* Legendas */
+  figcaption {
+    font-size: 0.9em;
+    color: darken(@text-color, 20%);
+    text-align: center;
+    margin-top: 0.5em;
+    font-style: italic;
+  }
+}

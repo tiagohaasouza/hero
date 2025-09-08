@@ -1,0 +1,200 @@
+.generate-book-page-size(@width, @height, @marginLeft, @marginRight, @marginTop, @marginBottom, @debug: false) {
+  @contentWidth: @width - @marginLeft - @marginRight;
+  @contentHeight: @height - @marginTop - @marginBottom;
+
+  .book-figure.content-image {
+    max-width: @contentWidth;
+    max-height: @contentHeight;
+  }
+
+  width: @width;
+  height: @height;
+  display: grid;
+  grid-template-columns: @marginLeft @contentWidth @marginRight;
+  grid-template-rows: @marginTop @contentHeight @marginBottom;
+  grid-template-areas:
+    'top-left top-center top-right'
+    'center-left content-center center-right'
+    'bottom-left bottom-center bottom-right';
+  gap: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none;
+  box-sizing: border-box;
+
+  ul,
+  ol,
+  li,
+  .corner,
+  .horizontal,
+  .vertical {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+  }
+
+  li {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .corner {
+    background-color: if(@debug, #ffcccc, transparent);
+
+    &::before {
+      content: if(@debug, attr(data-content), '');
+    }
+  }
+
+  .horizontal {
+    height: @marginTop;
+    background-color: if(@debug, #ccffcc, transparent);
+
+    &::before {
+      content: if(@debug, attr(data-content), '');
+    }
+  }
+
+  .vertical {
+    background-color: if(@debug, #ccccff, transparent);
+
+    &::before {
+      content: if(@debug, attr(data-content), '');
+    }
+  }
+
+  .top-left {
+    grid-area: top-left;
+    width: @marginLeft;
+    height: @marginTop;
+
+    &::before {
+      content: if(@debug, '{TL}', '');
+    }
+  }
+
+  .top-center {
+    grid-area: top-center;
+    height: @marginTop;
+
+    &::before {
+      content: if(@debug, '{TC}', '');
+    }
+  }
+
+  .top-right {
+    grid-area: top-right;
+    width: @marginRight;
+    height: @marginTop;
+
+    &::before {
+      content: if(@debug, '{TR}', '');
+    }
+  }
+
+  .center-left {
+    grid-area: center-left;
+    width: @marginLeft;
+
+    &::before {
+      content: if(@debug, '{CL}', '');
+    }
+  }
+
+  .content-center {
+    grid-area: content-center;
+    display: flex;
+    flex-direction: column;
+    width: @contentWidth;
+    height: @contentHeight;
+    max-width: @contentWidth;
+    max-height: @contentHeight;
+    justify-content: flex-start;
+    background-color: if(@debug, #ffffcc, transparent);
+  }
+
+  .contents {
+    width: 100%;
+    height: auto;
+  }
+
+  .center-right {
+    grid-area: center-right;
+    width: @marginRight;
+
+    &::before {
+      content: if(@debug, '{CR}', '');
+    }
+  }
+
+  .bottom-left {
+    grid-area: bottom-left;
+    width: @marginLeft;
+    height: @marginBottom;
+
+    &::before {
+      content: if(@debug, '{BL}', '');
+    }
+  }
+
+  .bottom-center {
+    grid-area: bottom-center;
+    height: @marginBottom;
+    /*
+		&::before {
+			content: if(@debug, '{BC}', '');
+		}
+
+		 */
+  }
+
+  .bottom-right {
+    grid-area: bottom-right;
+    width: @marginRight;
+    height: @marginBottom;
+
+    &::before {
+      content: if(@debug, '{BR}', '');
+    }
+  }
+
+  .content-top {
+    flex: 1;
+    width: 100%;
+    background-color: if(@debug, #ffccff, transparent);
+    /*
+		&::before {
+			content: if(@debug, '{CT}', '');
+			display: block;
+			width: 100%;
+		}
+
+		 */
+  }
+
+  .content-bottom {
+    height: auto;
+    width: 100%;
+    background-color: if(@debug, #ccffff, transparent);
+
+    /*
+		&::before {
+			content: if(@debug, '{CB}', '');
+			display: block;
+			width: 100%;
+		}
+
+		 */
+  }
+}
+.generate-helpers(@width, @height, @marginLeft, @marginRight, @marginTop, @marginBottom, @debug: false) {
+  @contentWidth: @width - @marginLeft - @marginRight;
+  @contentHeight: @height - @marginTop - @marginBottom;
+
+  .book-figure.content-image {
+    max-height: @contentHeight;
+  }
+}

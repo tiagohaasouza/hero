@@ -1,0 +1,23 @@
+@import 'mixins/mixin';
+
+@a4Width: 21cm;
+@a4Height: 29.7cm;
+@a4MarginLeft: 2.5cm;
+@a4MarginRight: 2cm;
+@a4MarginTop: 1.5cm;
+@a4MarginBottom: 2cm;
+@debug: true;
+
+.book-page-container:not(:last-child) {
+  margin-bottom: 30px !important;
+}
+
+.book-page.a4.portrait {
+  .generate-book-page-size(@a4Width, @a4Height, @a4MarginLeft, @a4MarginRight, @a4MarginTop, @a4MarginBottom, @debug);
+}
+
+.book-page.a4.landscape {
+  .generate-book-page-size(@a4Height, @a4Width, @a4MarginLeft, @a4MarginRight, @a4MarginTop, @a4MarginBottom, @debug);
+}
+
+.generate-helpers(@a4Width, @a4Height, @a4MarginLeft, @a4MarginRight, @a4MarginTop, @a4MarginBottom, @debug);

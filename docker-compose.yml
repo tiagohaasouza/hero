@@ -1,0 +1,143 @@
+services:
+  hero-db:
+    image: mariadb:11.4
+    container_name: hero-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE:-hero}
+      MYSQL_USER: ${DB_USERNAME:-hero}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-hero}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root}
+    command:
+      - "--character-set-server=utf8mb4"
+      - "--collation-server=utf8mb4_unicode_ci"
+      - "--bind-address=0.0.0.0"
+      - "--port=3306"
+      - "--skip-name-resolve"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./api/storage/logs/mariadb:/var/lib/mysql-logs
+    networks: [hero_net]
+
+  hero-redis:
+    image: redis:7-alpine
+    container_name: hero-redis
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "no"]
+    networks: [hero_net]
+
+  hero-mailhog:
+    image: mailhog/mailhog:latest
+    container_name: hero-mailhog
+    restart: unless-stopped
+    ports:
+      - "8025:8025"
+      - "1025:1025"
+    networks: [hero_net]
+
+  hero-api:
+    image: php:8.3-fpm
+    container_name: hero-api
+    restart: unless-stopped
+    working_dir: /var/www/html/api
+    env_file:
+      - ./api/.env
+    environment:
+      DB_CONNECTION: ${DB_CONNECTION:-mysql}
+      DB_HOST: ${DB_HOST:-hero-db}
+      DB_PORT: ${DB_PORT:-3306}
+      DB_DATABASE: ${DB_DATABASE:-hero}
+      DB_USERNAME: ${DB_USERNAME:-hero}
+      DB_PASSWORD: ${DB_PASSWORD:-hero}
+      CACHE_STORE: ${CACHE_STORE:-file}
+      CACHE_DRIVER: ${CACHE_DRIVER:-file}
+      SESSION_DRIVER: ${SESSION_DRIVER:-file}
+      QUEUE_CONNECTION: ${QUEUE_CONNECTION:-redis}
+      REDIS_HOST: ${REDIS_HOST:-hero-redis}
+      REDIS_PORT: ${REDIS_PORT:-6379}
+    volumes:
+      - ./api:/var/www/html/api
+      - composer_cache:/composer
+      - ./docker/entrypoints:/docker/entrypoints:ro
+    depends_on:
+      - hero-db
+      - hero-redis
+    entrypoint: ["/bin/sh", "/docker/entrypoints/api-entrypoint.sh"]
+    networks: [hero_net]
+
+  hero-queue:
+    image: php:8.3-fpm
+    container_name: hero-queue
+    restart: unless-stopped
+    working_dir: /var/www/html/api
+    env_file:
+      - ./api/.env
+    environment:
+      DB_CONNECTION: ${DB_CONNECTION:-mysql}
+      DB_HOST: ${DB_HOST:-hero-db}
+      DB_PORT: ${DB_PORT:-3306}
+      DB_DATABASE: ${DB_DATABASE:-hero}
+      DB_USERNAME: ${DB_USERNAME:-hero}
+      DB_PASSWORD: ${DB_PASSWORD:-hero}
+      CACHE_STORE: ${CACHE_STORE:-file}
+      CACHE_DRIVER: ${CACHE_DRIVER:-file}
+      QUEUE_CONNECTION: ${QUEUE_CONNECTION:-redis}
+      REDIS_HOST: ${REDIS_HOST:-hero-redis}
+      REDIS_PORT: ${REDIS_PORT:-6379}
+    volumes:
+      - ./api:/var/www/html/api
+      - ./docker/entrypoints:/docker/entrypoints:ro
+    depends_on:
+      - hero-api
+    entrypoint: ["/bin/sh", "/docker/entrypoints/queue-entrypoint.sh"]
+    networks: [hero_net]
+
+  hero-frontend:
+    image: node:20-alpine
+    container_name: hero-frontend
+    restart: unless-stopped
+    working_dir: /usr/src/app
+    env_file:
+      - ./app/.env
+    environment:
+      VITE_HOST: ${VITE_HOST:-0.0.0.0}
+      VITE_PORT: ${VITE_PORT:-3000}
+    volumes:
+      - ./app:/usr/src/app
+      - /usr/src/app/node_modules
+      - ./docker/entrypoints:/docker/entrypoints:ro
+    command: ["/bin/sh", "/docker/entrypoints/frontend-entrypoint.sh"]
+    networks: [hero_net]
+
+  hero-nginx:
+    image: nginx:1.27-alpine
+    container_name: hero-nginx
+    restart: unless-stopped
+    depends_on:
+      - hero-api
+      - hero-frontend
+    ports:
+      - "80:80"
+      - "443:443"
+    env_file:
+      - ./app/.env
+      - ./api/.env
+    environment:
+      PHP_FPM_HOST: hero-api
+      PHP_FPM_PORT: 9000
+    volumes:
+      - ./docker/nginx/conf.d:/etc/nginx/templates:ro
+      - ./docker/nginx/ssl:/etc/nginx/ssl
+      - ./api:/var/www/html/api:ro
+      - ./app:/var/www/html/app:ro
+      - ./docker/nginx/entrypoint.sh:/entrypoint.sh:ro
+    entrypoint: ["/bin/sh", "/entrypoint.sh"]
+    networks: [hero_net]
+
+networks:
+  hero_net:
+    driver: bridge
+
+volumes:
+  db_data:
+  composer_cache:

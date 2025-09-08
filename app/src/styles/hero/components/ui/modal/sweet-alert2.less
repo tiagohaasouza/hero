@@ -1,0 +1,252 @@
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Defautl theme
+------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.swal2-vuetify {
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  overflow: hidden;
+
+  .swal2-close {
+    position: absolute;
+    top: 16px;
+    width: 16px;
+    height: 16px;
+    font-size: 30px;
+    opacity: 0.5;
+    z-index: 1000;
+    cursor: pointer;
+    line-height: 0.5;
+    right: 14px;
+    transition: opacity 0.3s ease;
+  }
+
+  .swal2-close:hover {
+    opacity: 1;
+  }
+
+  .swal2-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #1e88e5;
+    margin-bottom: 16px;
+  }
+
+  .swal2-html-container {
+    font-size: 16px;
+    color: #5f6368;
+    line-height: 1.5;
+    max-height: 70vh;
+    overflow-y: auto;
+    background:
+      linear-gradient(white 30%, rgba(255, 255, 255, 0)),
+      linear-gradient(rgba(255, 255, 255, 0) 10px, #fff 70%) bottom,
+      radial-gradient(at top, rgba(0, 0, 0, 0.2), transparent 70%),
+      radial-gradient(at bottom, rgba(0, 0, 0, 0.2), transparent 70%) bottom;
+    background-repeat: no-repeat;
+    background-size:
+      100% 30px,
+      100% 30px,
+      100% 10px,
+      100% 10px;
+    background-attachment: local, local, scroll, scroll;
+    padding-right: 16px; /* Padding extra para barra de rolagem */
+  }
+
+  .theme--dark & .swal2-html-container {
+    background:
+      linear-gradient(#1d1d1d 30%, rgba(255, 255, 255, 0)),
+      linear-gradient(rgba(255, 255, 255, 0) 10px, #1d1d1d 70%) bottom,
+      radial-gradient(at top, rgba(255, 255, 255, 0.2), transparent 70%),
+      radial-gradient(at bottom, rgba(255, 255, 255, 0.2), transparent 70%) bottom;
+  }
+
+  .swal2-actions {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .swal2-confirm,
+  .swal2-cancel {
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    padding: 12px 24px;
+    font-size: 14px;
+    transition:
+      background-color 0.2s ease-in-out,
+      box-shadow 0.2s ease-in-out;
+    box-shadow:
+      0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+      0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+  }
+
+  .swal2-confirm {
+    background-color: #1e88e5;
+    color: white;
+    margin-right: 10px;
+    border: none;
+  }
+
+  .swal2-confirm:hover {
+    background-color: #1565c0;
+    box-shadow: 0px 4px 10px rgba(21, 101, 192, 0.4);
+  }
+
+  .swal2-cancel {
+    background-color: #e53935;
+    color: white;
+    border: none;
+  }
+
+  .swal2-cancel:hover {
+    background-color: #c62828;
+    box-shadow: 0px 4px 10px rgba(198, 40, 40, 0.4);
+  }
+
+  @media (max-width: 450px) {
+    .swal2-popup {
+      padding: 16px;
+    }
+
+    .swal2-title {
+      font-size: 18px;
+    }
+
+    .swal2-html-container {
+      font-size: 14px;
+      padding-right: 10px;
+    }
+
+    .swal2-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .swal2-confirm,
+    .swal2-cancel {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Borderless
+------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.swal2-vuetify.borderless {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  .swal2-popup {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .swal2-title {
+    margin: 0;
+    padding: 20px;
+    background-color: transparent;
+    color: #1e88e5;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    border-bottom: none;
+  }
+
+  .swal2-html-container {
+    flex: 1;
+    padding: 20px;
+    font-size: 16px;
+    color: whitesmoke;
+    background: none;
+    overflow-y: auto;
+  }
+
+  .swal2-actions {
+    margin: 0;
+    padding: 16px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: none;
+  }
+
+  .swal2-confirm,
+  .swal2-cancel {
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin: 0 10px;
+    transition: background-color 0.2s ease;
+    box-shadow: none;
+  }
+
+  .swal2-confirm {
+    background-color: #1e88e5;
+    color: white;
+  }
+
+  .swal2-confirm:hover {
+    background-color: #1565c0;
+  }
+
+  .swal2-cancel {
+    background-color: #e53935;
+    color: white;
+  }
+
+  .swal2-cancel:hover {
+    background-color: #c62828;
+  }
+
+  @media (max-width: 600px) {
+    .swal2-title {
+      font-size: 20px;
+      padding: 16px;
+    }
+
+    .swal2-html-container {
+      font-size: 14px;
+      padding: 16px;
+    }
+
+    .swal2-actions {
+      flex-direction: column;
+    }
+
+    .swal2-confirm,
+    .swal2-cancel {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+}

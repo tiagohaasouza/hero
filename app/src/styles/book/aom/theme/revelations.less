@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap');
+
+@background-color: #1a1a1a;
+@text-color: #e6e6e6;
+@heading-color: #ff0000;
+@quote-border-color: #ff0000;
+@accent-color: #ffcc00;
+
+@font-heading: 'Anton', sans-serif;
+@font-body: 'Roboto', sans-serif;
+
+.aom {
+  background-color: @background-color;
+  color: @text-color;
+  font-family: @font-body;
+  line-height: 1.7;
+  padding: 2em;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: @heading-color;
+    font-family: @font-heading;
+    margin: 0.8em 0;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    border-bottom: 3px solid @accent-color;
+  }
+
+  h2 {
+    font-size: 2em;
+    border-bottom: 2px solid @accent-color;
+  }
+
+  h3 {
+    font-size: 1.75em;
+    border-bottom: 1px solid @accent-color;
+  }
+
+  p {
+    margin: 1.5em 0;
+  }
+
+  img {
+    border: 5px solid @quote-border-color;
+    filter: sepia(50%);
+    margin: 1em 0;
+    max-width: 100%;
+  }
+
+  blockquote {
+    border-left: 5px solid @quote-border-color;
+    padding-left: 1em;
+    background-color: rgba(255, 0, 0, 0.1);
+  }
+
+  ul,
+  ol {
+    margin: 1.5em 0;
+    padding-left: 1.5em;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+  }
+
+  a {
+    color: @accent-color;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  figcaption {
+    font-size: 0.9em;
+    color: darken(@text-color, 20%);
+    text-align: center;
+    margin-top: 0.5em;
+  }
+}

@@ -1,0 +1,173 @@
+/* Importando as fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=EB+Garamond:wght@400;700&display=swap');
+
+/* Definindo as cores e as fontes */
+@background-color: #ffffff; /* Fundo branco */
+@text-color: #3b2716; /* Marrom antigo para o texto */
+@heading-color: #5c3d2e; /* Marrom mais escuro para títulos */
+@quote-border-color: #8b572a;
+@accent-color: #b8860b; /* Dourado envelhecido para detalhes */
+
+@font-heading: 'Playfair Display', serif; /* Nova fonte para os títulos */
+@font-body: 'EB Garamond', serif; /* Fonte para corpo do texto */
+
+/* Estilos aplicados à classe .aom */
+.aom {
+  background-color: @background-color;
+  color: @text-color;
+  font-family: @font-body; /* Fonte EB Garamond para o corpo do texto */
+  line-height: 1.7;
+  padding: 2em;
+
+  /* Estilos para títulos com fonte Playfair Display e centralizados */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: @heading-color;
+    font-family: @font-heading; /* Fonte Playfair Display para títulos */
+    margin: 0.8em 0;
+    text-transform: capitalize;
+    letter-spacing: 0.05em;
+    text-align: center; /* Centralizando os títulos */
+  }
+
+  h1 {
+    font-size: 2.5em;
+    border-bottom: 3px solid @accent-color; /* Linha decorativa abaixo do h1 */
+    padding-bottom: 0.2em;
+  }
+
+  h2 {
+    font-size: 2em;
+    border-bottom: 2px solid @accent-color;
+    padding-bottom: 0.2em;
+  }
+
+  h3 {
+    font-size: 1.75em;
+    border-bottom: 1px solid @accent-color;
+    padding-bottom: 0.2em;
+  }
+
+  h4 {
+    font-size: 1.5em;
+  }
+
+  h5 {
+    font-size: 1.25em;
+  }
+
+  h6 {
+    font-size: 1em;
+    color: darken(@heading-color, 20%);
+  }
+
+  /* Estilo para parágrafos */
+  p {
+    margin: 1.5em 0;
+    text-indent: 2em; /* Indentação para dar o estilo de manuscritos antigos */
+  }
+
+  /* Estilo para imagens */
+  img {
+    border: 5px solid @quote-border-color;
+    border-radius: 10px;
+    margin: 1em 0;
+    max-width: 100%;
+  }
+
+  /* Estilo para blockquote */
+  blockquote {
+    border-left: 5px solid @quote-border-color;
+    padding-left: 1em;
+    font-style: italic;
+    background-color: rgba(244, 227, 196, 0.3);
+    margin: 1.5em 0;
+    color: @text-color;
+  }
+
+  /* Estilo para listas */
+  ul {
+    list-style-type: disc;
+    margin: 1.5em 0;
+    padding-left: 1.5em;
+  }
+
+  ol {
+    list-style-type: decimal;
+    margin: 1.5em 0;
+    padding-left: 1.5em;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+  }
+
+  /* Estilo para notas de rodapé */
+  .footnote {
+    font-size: 0.8em;
+    color: @text-color;
+    margin-top: 1em;
+  }
+
+  .footnote sup {
+    font-size: 0.75em;
+    color: @accent-color; /* Notas de rodapé com cor dourada */
+  }
+
+  .footnote a {
+    text-decoration: none;
+    color: @accent-color;
+  }
+
+  /* Estilo para tabelas */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2em 0;
+  }
+
+  th,
+  td {
+    border: 1px solid @quote-border-color;
+    padding: 0.75em;
+    text-align: left;
+    background-color: rgba(244, 227, 196, 0.1); /* Fundo suave */
+  }
+
+  th {
+    background-color: rgba(244, 227, 196, 0.5); /* Cabeçalhos com cor mais escura */
+    color: @heading-color;
+  }
+
+  /* Estilos para links */
+  a {
+    color: @accent-color;
+    text-decoration: underline;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: darken(@accent-color, 10%);
+  }
+
+  /* Estilos para legendas */
+  figcaption {
+    font-size: 0.9em;
+    color: darken(@text-color, 20%);
+    text-align: center;
+    margin-top: 0.5em;
+    font-style: italic;
+  }
+
+  /* Estilos para divisores */
+  hr {
+    border: 0;
+    height: 1px;
+    background: @quote-border-color;
+    margin: 2em 0;
+  }
+}

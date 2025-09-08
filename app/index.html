@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Hero - Powerful Vuetify 3 Admin Template</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <script type="x-shader/x-fragment" id="vertShader">
+      precision mediump float;
+
+      varying vec2 vUv;
+      attribute vec2 a_position;
+
+      void main() {
+      	vUv = .5 * (a_position + 1.);
+      	gl_Position = vec4(a_position, 0.0, 1.0);
+      }
+    </script>
+
+    <script type="x-shader/x-fragment" id="fragShader">
+      precision mediump float;
+
+      varying vec2 vUv;
+      uniform float u_time;
+      uniform float u_ratio;
+      uniform vec2 u_pointer_position;
+      uniform float u_scroll_progress;
+
+      vec2 rotate(vec2 uv, float th) {
+      	return mat2(cos(th), sin(th), -sin(th), cos(th)) * uv;
+      }
+
+      float neuro_shape(vec2 uv, float t, float p) {
+      	vec2 sine_acc = vec2(0.);
+      	vec2 res = vec2(0.);
+      	float scale = 8.;
+
+      	for (int j = 0; j < 15; j++) {
+      		uv = rotate(uv, 1.);
+      		sine_acc = rotate(sine_acc, 1.);
+      		vec2 layer = uv * scale + float(j) + sine_acc - t;
+      		sine_acc += sin(layer);
+      		res += (.5 + .5 * cos(layer)) / scale;
+      		scale *= (1.2 - .07 * p);
+      	}
+      	return res.x + res.y;
+      }
+
+      void main() {
+      	vec2 uv = .5 * vUv;
+      	uv.x *= u_ratio;
+
+      	vec2 pointer = vUv - u_pointer_position;
+      	pointer.x *= u_ratio;
+      	float p = clamp(length(pointer), 0., 1.);
+      	p = .5 * pow(1. - p, 2.);
+
+      	float t = .001 * u_time;
+      	vec3 color = vec3(0.);
+
+      	float noise = neuro_shape(uv, t, p);
+
+      	noise = 1.2 * pow(noise, 3.);
+      	noise += pow(noise, 10.);
+      	noise = max(.0, noise - .5);
+      	noise *= (1. - length(vUv - .5));
+
+      	color = normalize(vec3(.2, .5 + .4 * cos(3. * u_scroll_progress), .5 + .5 * sin(3. * u_scroll_progress)));
+
+      	color = color * noise;
+
+      	gl_FragColor = vec4(color, noise);
+      }
+    </script>
+
+    <script type="x-shader/x-fragment" id="kaleidoscopes">
+      #version 300 es
+      /*********
+      * made by Matthias Hurrle (@atzedent)
+      */
+      precision highp float;
+      out vec4 O;
+      uniform float time;
+      uniform vec2 resolution;
+      #define FC gl_FragCoord.xy
+      #define R resolution
+      #define T (time+2.5)
+      #define S smoothstep
+      #define hue(a) (.6+.6*cos(6.3*(a)+vec3(0,83,21)))
+      void pR(inout vec2 p, float a) {
+      	p=cos(a)*p+sin(a)*vec2(-p.y,p.x);}
+      float poly(vec2 p, float n) {
+      	float
+      	a=atan(p.x,p.y),
+      	b=6.28318/n;
+      	return cos(floor(.5+a/b)*b-a)*length(p);
+      }
+      vec3 pattern0(vec2 uv) {
+      	vec2 p=uv*3.;
+      	vec3 col=vec3(0);
+      	for (float i=.0; i++<4.;) {
+      		pR(p,.785398);
+      		p=fract(p)-.5;
+      		float d=length(p*p);
+      		d=sin(12.*d+i*T*.5)*.62;
+      		d=abs(d);
+      		col+=pow(.05/d,1.2)*hue(dot(p,uv)*i+T*.2);
+      	}
+      	return col;
+      }
+      vec3 pattern1(vec2 uv) {
+      	vec2 p=uv*2.;
+      	vec3 col=vec3(0);
+      	for (float i=.0; i++<4.;) {
+      		pR(p,.785398);
+      		p=fract(p)-.5;
+      		float d=length(p);
+      		d=sin(14.*d+T)*.8;
+      		d=abs(d);
+      		col+=(.05/d)*hue(dot(uv,uv)+i*.125+T*.2);
+      		p*=1.618;
+      	}
+      	return col;
+      }
+      vec3 pattern2(vec2 uv) {
+      	vec2 p=uv*1.5;
+        vec3 col = vec3(0);
+        const float n = 3.5;
+        for (float i = .0; i < 6.; i++) {
+          p *= 2.;
+          p = p-n*clamp(round(p/n), -1.,1.);
+          float d = exp(-length(p*.2));
+          d = log(1e-5*d);
+          d = pow(sin(d*20.+T*1.4), 2.)*.125;
+          d = abs(d);
+          d = pow(5e-3/d, .25);
+          col += d * hue(-length(uv)+i*.1-T*.7);
+          col = pow(col, vec3(1.28));
+        }
+        col *= exp(-125e-5*(length(uv)));
+        col = pow(S(.0, 20.,col), vec3(.4545));
+        return col;
+      }
+      vec3 pattern3(vec2 uv) {
+      	vec2 p=uv*.25;
+      	vec3 col=vec3(0);
+      	for (float i=.0; i<5.; i++) {
+      		p=fract(p*2.05)-.5;
+      		float d=poly(p,8.)/(.25+dot(p,p));
+      		d=sin(d*9.+T+i)*.25;
+      		d=abs(d);
+      		col+=.02/d*hue(length(uv)+i*.125-T*.125);
+      	}
+      	return col;
+      }
+      void main(void) {
+      	vec2 uv=(FC-.5*R)/min(R.x,R.y);
+      	vec3 col=pattern1(uv);
+      	float proc=T*.1;
+      	int pre =int(floor(mod(proc+.5,4.)));
+      	switch (pre) {
+      		case 0: proc-=abs(abs(uv.x)-abs(uv.y))*.2; break;
+      		case 1: proc-=max(abs(uv.x),abs(uv.y))*.2; break;
+      		case 2: proc-=length(uv)*.2; break;
+      		case 3: proc-=min(abs(uv.x),abs(uv.y))*.2; break;
+      	}
+      	int scene=int(floor(mod(proc,4.)));
+      	switch (scene) {
+      		case 0: col=pattern0(uv); break;
+      		case 1: col=pattern1(uv); break;
+      		case 2: col=pattern2(uv); break;
+      		case 3: col=pattern3(uv); break;
+      	}
+
+      	O=vec4(col,1);
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script src="/vendor/particles/particles.min.js"></script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

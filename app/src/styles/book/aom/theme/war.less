@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&family=Roboto:wght@400;700&display=swap');
+
+@background-color: #333333;
+@text-color: #dddddd;
+@heading-color: #b22222;
+@quote-border-color: #b22222;
+@accent-color: #ffcc00;
+
+@font-heading: 'Staatliches', sans-serif;
+@font-body: 'Roboto', sans-serif;
+
+.aom {
+  background-color: @background-color;
+  color: @text-color;
+  font-family: @font-body;
+  line-height: 1.7;
+  padding: 2em;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: @heading-color;
+    font-family: @font-heading;
+    margin: 0.8em 0;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    border-bottom: 3px solid @accent-color;
+    padding-bottom: 0.2em;
+  }
+
+  h2 {
+    font-size: 2em;
+    border-bottom: 2px solid @accent-color;
+  }
+
+  h3 {
+    font-size: 1.75em;
+    border-bottom: 1px solid @accent-color;
+  }
+
+  p {
+    margin: 1.5em 0;
+  }
+
+  img {
+    border: 3px solid @quote-border-color;
+    margin: 1em 0;
+    max-width: 100%;
+  }
+
+  blockquote {
+    border-left: 5px solid @quote-border-color;
+    padding-left: 1em;
+    background-color: rgba(178, 34, 34, 0.2);
+  }
+
+  ul,
+  ol {
+    margin: 1.5em 0;
+    padding-left: 1.5em;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+  }
+
+  a {
+    color: @accent-color;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  figcaption {
+    font-size: 0.9em;
+    color: darken(@text-color, 20%);
+    text-align: center;
+    margin-top: 0.5em;
+  }
+}

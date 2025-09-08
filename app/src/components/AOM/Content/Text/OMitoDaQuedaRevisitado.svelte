@@ -1,0 +1,5 @@
+Consideremos o mito da queda de uma perspectiva não transcendental, sem espiritualidade e metafísica.
+
+Até então deve estar óbvio que eu defendo uma realidade que possua tais elementos, metafísica e transcendência; todavia irei mostrar a versão da história de uam perspectiva meramente física, para aqueles que possuem dificuldade em compreender ou acreditar na transcendência, consigam observar a questão de uma realidade que talvez pareça mais plausível.
+
+Considerando o conhecimento disponível sobre religião comparada e ufologia, é sabido que os seres chamados alienígenas, também conhecidos como arcontes, seres extra dimensionais, anjos caídos e demonios possuem um sistema de dominação extremamente sofisticado. O suposto e inicialmente óbvio sistema belicoso da Terra, não é a estratégia inicial destes seres, isto é, se um planeta estiver sobre ataque destas entidades, os habitantes do planeta em questão não verão naves atirando para todos os lados (pelo menos não no primeiro momento).

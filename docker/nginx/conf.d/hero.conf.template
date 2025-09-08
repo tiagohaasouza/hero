@@ -1,0 +1,94 @@
+map $http_upgrade $connection_upgrade {
+  default upgrade;
+  ''      close;
+}
+
+upstream php_backend {
+  server ${PHP_FPM_HOST}:${PHP_FPM_PORT};
+}
+
+server {
+  listen 80;
+  listen [::]:80;
+  server_name hero.localhost *.hero.localhost api.hero.localhost;
+  return 301 https://$host$request_uri;
+}
+
+# ==== API HOST ====
+server {
+  listen 443 ssl;
+  listen [::]:443 ssl;
+  http2 on;
+  server_name api.hero.localhost;
+
+  ssl_certificate     /etc/nginx/ssl/hero.localhost.crt;
+  ssl_certificate_key /etc/nginx/ssl/hero.localhost.key;
+
+  access_log /var/log/nginx/access.log;
+  error_log  /var/log/nginx/error.log;
+
+  root  /var/www/html/api/public;
+  index index.php;
+
+  add_header X-Frame-Options "SAMEORIGIN" always;
+  add_header X-Content-Type-Options "nosniff" always;
+  add_header X-XSS-Protection "1; mode=block" always;
+
+  location / {
+    try_files $uri /index.php?$query_string;
+  }
+
+  location ~ \.php$ {
+    include fastcgi_params;
+    fastcgi_param SCRIPT_FILENAME /var/www/html/api/public$fastcgi_script_name;
+    fastcgi_param HTTPS on;
+    fastcgi_param HTTP_HOST $host;
+    fastcgi_pass php_backend;
+    fastcgi_read_timeout 300;
+  }
+}
+
+# ==== APP + TENANTS ====
+server {
+  listen 443 ssl;
+  listen [::]:443 ssl;
+  http2 on;
+  server_name hero.localhost *.hero.localhost;
+
+  ssl_certificate     /etc/nginx/ssl/hero.localhost.crt;
+  ssl_certificate_key /etc/nginx/ssl/hero.localhost.key;
+
+  access_log /var/log/nginx/access.log;
+  error_log  /var/log/nginx/error.log;
+
+  add_header X-Frame-Options "SAMEORIGIN" always;
+  add_header X-Content-Type-Options "nosniff" always;
+  add_header X-XSS-Protection "1; mode=block" always;
+
+  # API for central & tenants: forward to Laravel front controller
+  location ^~ /api/ {
+    include fastcgi_params;
+    fastcgi_param SCRIPT_FILENAME /var/www/html/api/public/index.php;
+    fastcgi_param HTTPS on;
+    fastcgi_param HTTP_HOST $host;
+    fastcgi_param REQUEST_URI $request_uri;
+    fastcgi_param QUERY_STRING $query_string;
+    fastcgi_param REQUEST_METHOD $request_method;
+    fastcgi_param CONTENT_TYPE $content_type;
+    fastcgi_param CONTENT_LENGTH $content_length;
+    fastcgi_pass php_backend;
+    fastcgi_read_timeout 300;
+  }
+
+  # Frontend SPA (Vite) — port from FRONTEND_PORT
+  location / {
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+    proxy_pass http://hero-frontend:${FRONTEND_PORT};
+  }
+}

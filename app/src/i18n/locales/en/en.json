@@ -1,0 +1,643 @@
+{
+  "metadata": {
+    "code": "en",
+    "name": "English",
+    "flag": "/assets/flags/us.svg",
+    "country": "United States",
+    "timezone": "America/New_York"
+  },
+  "dateTimeFormats": {
+    "long": {
+      "year": "numeric",
+      "month": "long",
+      "day": "numeric",
+      "weekday": "long"
+    },
+    "short": {
+      "year": "numeric",
+      "month": "short",
+      "day": "numeric"
+    },
+    "time": {
+      "hour": "numeric",
+      "minute": "numeric"
+    }
+  },
+  "numberFormats": {
+    "currency": {
+      "style": "currency",
+      "currency": "USD"
+    },
+    "decimal": {
+      "style": "decimal",
+      "minimumFractionDigits": 2
+    }
+  },
+  "dialog": {
+    "areYouSure": "Are you sure?"
+  },
+  "library": {
+    "label": "Library | Libraries",
+    "singular": "Library",
+    "plural": "Libraries"
+  },
+  "menu": {
+    "label": "Menu | Menus",
+    "singular": "Menu",
+    "plural": "Menus",
+    "open": "Open menu",
+    "close": "Close menu"
+  },
+  "editor": {
+    "label": "Editor | Editors",
+    "singular": "Editor",
+    "plural": "Editors",
+    "sourceCode": "Source code"
+  },
+  "book": {
+    "label": "Book | Books",
+    "singular": "Book",
+    "plural": "Books",
+    "add": "Add Book",
+    "edit": "Edit Book",
+    "delete": "Delete Book",
+    "title": "Book Title",
+    "author": "Book Author",
+    "category": "Book Category",
+    "price": "Book Price",
+    "quantity": "Book Quantity",
+    "published": "Published on",
+    "pages": "Book Pages",
+    "isbn": "Book ISBN",
+    "summary": "Book Summary",
+    "cover": "Book Cover",
+    "back": "Book Back",
+    "next": "Next Book",
+    "subtitle": "Book Subtitle",
+    "publisher": "Book Publisher",
+    "language": "Book Language",
+    "format": "Book Format",
+    "read": {
+      "label": "Read",
+      "singular": "Read book",
+      "plural": "Read books",
+      "all": "Read all books",
+      "one": "Read one book"
+    }
+  },
+  "user": {
+    "label": "User | Users",
+    "singular": "User",
+    "plural": "Users",
+    "dashboard": "Dashboard",
+    "menu": {
+      "label": "Menu | Menus",
+      "singular": "Menu",
+      "plural": "Menus",
+      "userMenu": "User Menu"
+    },
+    "account": {
+      "label": "Account | Accounts",
+      "singular": "Account",
+      "plural": "Accounts"
+    },
+    "manageAccount": "Manage your account",
+    "downloads": {
+      "label": "Download | Downloads",
+      "singular": "Download",
+      "plural": "Downloads"
+    },
+    "subscriptions": {
+      "label": "Subscription | Subscriptions",
+      "singular": "Subscription",
+      "plural": "Subscriptions"
+    },
+    "history": "History",
+    "lastActivity": "Last activity",
+    "lastAccess": "Last access",
+    "lastAccessIn": "Your last access was on",
+    "status": {
+      "label": "User status | Users status",
+      "singular": "User status",
+      "plural": "Users status",
+      "online": "Online",
+      "offline": "Offline",
+      "away": "Away",
+      "busy": "Busy"
+    },
+    "role": {
+      "super": {
+        "label": "Super | Supers",
+        "singular": "Super",
+        "plural": "Supers"
+      },
+      "admin": {
+        "label": "Admin | Admins",
+        "singular": "Admin",
+        "plural": "Admins"
+      },
+      "writer": {
+        "label": "Writer | Writers",
+        "singular": "Writer",
+        "plural": "Writers"
+      },
+      "editor": {
+        "label": "Editor | Editors",
+        "singular": "Editor",
+        "plural": "Editors"
+      },
+      "user": {
+        "label": "User | Users",
+        "singular": "User",
+        "plural": "Users"
+      },
+      "visitor": {
+        "label": "Visitor | Visitors",
+        "singular": "Visitor",
+        "plural": "Visitors"
+      }
+    }
+  },
+  "notification": {
+    "label": "Notification | Notifications",
+    "singular": "Notification",
+    "plural": "Notifications",
+    "seeAll": "See all notifications",
+    "allLoaded": "All notifications have been loaded",
+    "showNotifications": "Show notifications"
+  },
+  "chat": {
+    "label": "Chat | Chats",
+    "singular": "Chat",
+    "plural": "Chats",
+    "show": "Show chat",
+    "allLoaded": "All chats have been loaded",
+    "startNewChat": "Start new chat",
+    "noChatsAvailable": "No chats available",
+    "sendMessage": "Send message",
+    "newMessage": "New message"
+  },
+  "priority": {
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High",
+    "urgent": "Urgent"
+  },
+  "social": {
+    "label": "Social | Socials",
+    "singular": "Social",
+    "plural": "Socials",
+    "friends": {
+      "label": "Friend | Friends",
+      "singular": "Friend",
+      "plural": "Friends"
+    }
+  },
+  "commerce": {
+    "label": "Commerce | Commerces",
+    "singular": "Commerce",
+    "plural": "Commerces",
+    "growth": "Growth",
+    "sales": {
+      "label": "Sale | Sales",
+      "singular": "Sale",
+      "plural": "Sales"
+    },
+    "projections": {
+      "label": "Projection | Projections",
+      "singular": "Projection",
+      "plural": "Projections"
+    },
+    "product": {
+      "label": "Product | Products",
+      "singular": "Product",
+      "plural": "Products",
+      "addProduct": "Add Product",
+      "editProduct": "Edit Product",
+      "deleteProduct": "Delete Product",
+      "productName": "Product Name",
+      "productPrice": "Product Price",
+      "productDescription": "Product Description",
+      "productCategory": "Product Category"
+    },
+    "order": {
+      "label": "Order | Orders",
+      "singular": "Order",
+      "plural": "Orders",
+      "orderNumber": "Order Number",
+      "orderDate": "Order Date",
+      "orderStatus": "Order Status",
+      "orderTotal": "Order Total",
+      "orderDetails": "Order Details"
+    },
+    "customer": {
+      "label": "Customer | Customers",
+      "singular": "Customer",
+      "plural": "Customers",
+      "customerName": "Customer Name",
+      "customerEmail": "Customer Email",
+      "customerPhone": "Customer Phone",
+      "customerAddress": "Customer Address"
+    }
+  },
+  "blog": {
+    "label": "Blog | Blogs",
+    "singular": "Blog",
+    "plural": "Blogs",
+    "author": {
+      "label": "Author | Authors",
+      "singular": "Author",
+      "plural": "Authors"
+    },
+    "post": {
+      "label": "Post | Posts",
+      "singular": "Post",
+      "plural": "Posts",
+      "addPost": "Add Post",
+      "editPost": "Edit Post",
+      "deletePost": "Delete Post",
+      "postTitle": "Post Title",
+      "postContent": "Post Content",
+      "postCategory": "Post Category",
+      "postTags": "Post Tags"
+    },
+    "comment": {
+      "label": "Comment | Comments",
+      "singular": "Comment",
+      "plural": "Comments",
+      "addComment": "Add Comment",
+      "editComment": "Edit Comment",
+      "deleteComment": "Delete Comment",
+      "commentAuthor": "Comment Author",
+      "commentContent": "Comment Content"
+    },
+    "category": {
+      "label": "Category | Categories",
+      "singular": "Category",
+      "plural": "Categories",
+      "addCategory": "Add Category",
+      "editCategory": "Edit Category",
+      "deleteCategory": "Delete Category",
+      "categoryName": "Category Name"
+    },
+    "tag": {
+      "label": "Tag | Tags",
+      "singular": "Tag",
+      "plural": "Tags",
+      "addTag": "Add Tag",
+      "editTag": "Edit Tag",
+      "deleteTag": "Delete Tag",
+      "tagName": "Tag Name"
+    }
+  },
+  "authentication": {
+    "welcomeBack": "Welcome back!",
+    "logIntoAccount": "Log into your account",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "logIn": "Log In",
+    "orContinueWith": "Or continue with",
+    "dontHaveAccount": "Don't have an account?",
+    "signUp": "Sign Up",
+    "createAccount": "Create Account",
+    "signUpToGetStarted": "Sign up to get started",
+    "confirmPassword": "Confirm Password",
+    "alreadyHaveAccount": "Already have an account?",
+    "resetPassword": "Reset Password",
+    "enterYourEmail": "Enter your email to reset your password",
+    "sendResetLink": "Send reset link",
+    "enterCode": "Enter the code sent to your email",
+    "confirmCode": "Confirm code",
+    "newPassword": "New Password",
+    "confirmNewPassword": "Confirm new password",
+    "saveNewPassword": "Save new password",
+    "code": "Authentication Code",
+    "verifySMS": "Verify SMS",
+    "enterSMSCode": "Enter the code sent via SMS",
+    "verifyEmail": "Verify Email",
+    "enterEmailCode": "Enter the code sent to your email",
+    "verifyAuthenticatorApp": "Verify Authenticator App",
+    "enterAuthenticatorCode": "Enter the code from authenticator app",
+    "sendVerificationCode": "Send verification code",
+    "verify": "Verify",
+    "verifyAccount": "Verify Account",
+    "enterVerificationCode": "Enter the verification code sent",
+    "resendCode": "Resend code"
+  },
+  "layout": {
+    "screen": {
+      "label": "Screen | Screens",
+      "singular": "Screen",
+      "plural": "Screens",
+      "fullscreen": {
+        "label": "Fullscreen",
+        "singular": "Fullscreen",
+        "plural": "Fullscreens",
+        "enter": "Enter fullscreen",
+        "exit": "Exit fullscreen"
+      }
+    },
+    "theme": {
+      "label": "Theme | Themes",
+      "singular": "Theme",
+      "plural": "Themes",
+      "switchTheme": "Switch theme",
+      "current": "Current theme",
+      "toggleDarkMode": "Toggle dark mode",
+      "toggleLightMode": "Toggle light mode",
+      "mode": {
+        "label": "Mode | Modes",
+        "singular": "Mode",
+        "plural": "Modes",
+        "dark": "Dark",
+        "light": "Light",
+        "switchToLight": "Switch to light mode",
+        "switchToDark": "Switch to dark mode"
+      }
+    }
+  },
+  "localization": {
+    "language": {
+      "label": "Language | Languages",
+      "singular": "Language",
+      "plural": "Languages",
+      "change": "Change language",
+      "filter": "Filter language"
+    },
+    "yesterday": "Yesterday",
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "date": {
+      "long": "dddd, MMMM D, YYYY",
+      "short": "MM/DD/YYYY",
+      "time": "HH:mm",
+      "full": "dddd, MMMM D, YYYY [at] HH:mm",
+      "months": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ],
+      "monthsShort": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ],
+      "weekdays": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "weekdaysShort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+      "weekdaysMin": ["S", "M", "T", "W", "T", "F", "S"]
+    },
+    "units": {
+      "day": {
+        "label": "day | days",
+        "singular": "day",
+        "plural": "days"
+      },
+      "hour": {
+        "label": "hour | hours",
+        "singular": "hour",
+        "plural": "hours"
+      },
+      "minute": {
+        "label": "minute | minutes",
+        "singular": "minute",
+        "plural": "minutes"
+      },
+      "second": {
+        "label": "second | seconds",
+        "singular": "second",
+        "plural": "seconds"
+      }
+    },
+    "timezone": {
+      "label": "Timezone | Timezones",
+      "singular": "Timezone",
+      "plural": "Timezones",
+      "change": "Change Timezone"
+    }
+  },
+  "language": {
+    "name": "English",
+    "select": "Select language"
+  },
+  "online": "Online",
+  "pricing": {
+    "label": "Price | Prices",
+    "singular": "Price",
+    "plural": "Prices"
+  },
+  "faq": "FAQ",
+  "search": "Search",
+  "loading": "Loading...",
+  "logout": "Logout",
+  "login": "Login",
+  "noMoreItems": "No more items",
+  "notFound": "Not found",
+  "summary": "Summary",
+  "statistics": "Statistics",
+  "copyright": {
+    "label": "Copyright",
+    "allRightsReserved": "All rights reserved"
+  },
+  "to": {
+    "label": "To",
+    "select": "To select",
+    "close": "To Close"
+  },
+  "new": {
+    "label": "New | News",
+    "singular": "New",
+    "plural": "News",
+    "female": {
+      "label": "New | News",
+      "singular": "New",
+      "plural": "News"
+    }
+  },
+  "colors": {
+    "label": "Color | Colors",
+    "singular": "Color",
+    "plural": "Colors",
+    "red": "Red",
+    "green": "Green",
+    "blue": "Blue",
+    "yellow": "Yellow",
+    "orange": "Orange",
+    "purple": "Purple",
+    "black": "Black",
+    "white": "White",
+    "gray": "Gray"
+  },
+  "chart": {
+    "label": "Chart | Charts",
+    "singular": "Chart",
+    "plural": "Charts",
+    "bar": "Bar Chart",
+    "bubble": "Bubble Chart",
+    "line": "Line Chart",
+    "pie": "Pie Chart",
+    "area": "Area Chart",
+    "scatter": "Scatter Chart",
+    "doughnut": "Doughnut Chart",
+    "polar": "Polar Chart",
+    "radar": "Radar Chart",
+    "apexCharts": "Apex Charts",
+    "donut": "Doughnut Chart",
+    "heatmap": "Heatmap Chart",
+    "radialbar": "Radial Bar Chart",
+    "candlestick": "Candlestick Chart",
+    "column": "Column Chart",
+    "mixed": "Mixed Chart",
+    "funnel": "Funnel Chart",
+    "boxplot": "Boxplot Chart",
+    "treemap": "Treemap Chart",
+    "slope": "Slope Chart",
+    "range": "Range Chart",
+    "timeline": "Timeline Chart"
+  },
+  "profile": {
+    "label": "Profile | Profiles",
+    "singular": "Profile",
+    "plural": "Profiles"
+  },
+  "settings": {
+    "label": "Setting | Settings",
+    "singular": "Setting",
+    "plural": "Settings"
+  },
+  "greeting": {
+    "welcome": "Welcome",
+    "goodMorning": "Good morning",
+    "goodAfternoon": "Good afternoon",
+    "goodEvening": "Good evening",
+    "hello": "Hello"
+  },
+  "error": {
+    "404": {
+      "label": "Error 404",
+      "message": "Page not found"
+    },
+    "500": {
+      "label": "Error 500",
+      "message": "Internal server error"
+    },
+    "connection": {
+      "label": "Connection Error",
+      "message": "Could not connect to server"
+    },
+    "locale": {
+      "label": "Invalid Locale",
+      "message": "Invalid locale"
+    },
+    "timeZone": {
+      "label": "Invalid Timezone",
+      "message": "Invalid timezone"
+    },
+    "currency": {
+      "label": "Invalid Currency",
+      "message": "Invalid currency"
+    },
+    "dateFormat": {
+      "label": "Invalid Date Format",
+      "message": "Invalid date format"
+    },
+    "numberFormat": {
+      "label": "Invalid Number Format",
+      "message": "Invalid number format"
+    },
+    "dateTimeFormat": {
+      "label": "Invalid Date Time Format",
+      "message": "Invalid date time format"
+    },
+    "file": {
+      "label": "File Error",
+      "message": "File not found"
+    },
+    "image": {
+      "label": "Image Error",
+      "message": "Image not found"
+    },
+    "video": {
+      "label": "Video Error",
+      "message": "Video not found"
+    },
+    "audio": {
+      "label": "Audio Error",
+      "message": "Audio not found"
+    },
+    "i18nFile": {
+      "label": "i18n File Error",
+      "message": "i18n file not found"
+    }
+  },
+  "graph": {
+    "label": "Graph | Graphs",
+    "singular": "Graph",
+    "plural": "Graphs",
+    "bar": "Bar Graph",
+    "line": "Line Graph",
+    "pie": "Pie Graph",
+    "area": "Area Graph",
+    "scatter": "Scatter Graph"
+  },
+  "table": {
+    "label": "Table | Tables",
+    "singular": "Table",
+    "plural": "Tables",
+    "noData": "No data available",
+    "rowsPerPage": "Rows per page"
+  },
+  "message": {
+    "label": "Message | Messages",
+    "singular": "Message",
+    "plural": "Messages",
+    "success": "Operation completed successfully",
+    "error": "An error occurred",
+    "warning": "Warning",
+    "info": "Information"
+  },
+  "dashboard": {
+    "label": "Dashboard | Dashboards",
+    "singular": "Dashboard",
+    "plural": "Dashboards",
+    "title": "Admin dashboard",
+    "summary": "Summary",
+    "orders": "Orders",
+    "newOrders": "New Orders",
+    "clients": "Clients",
+    "newClients": "New Clients",
+    "sales": "Sales",
+    "growth": "Growth",
+    "profit": "Profit",
+    "todayProfit": "Today's Profit",
+    "statistics": "Statistics",
+    "statusStatistics": "Status Statistics",
+    "incomeStatistics": "Income Statistics",
+    "transactions": "Transactions",
+    "salesOrdersRevenue": "Sales Orders Revenue",
+    "salesAnalytics": "Sales Analytics",
+    "cpu": "CPU",
+    "memory": "Memory",
+    "monthlyIncrease": "Monthly Increase",
+    "registerUser": "Register User",
+    "premiumUser": "Premium User"
+  }
+}

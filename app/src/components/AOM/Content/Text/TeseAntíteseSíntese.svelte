@@ -1,0 +1,1 @@
+[fazer a síntese entre a os textos: ]

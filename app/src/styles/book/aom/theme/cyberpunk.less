@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
+
+@background-color: #0d0d0d; /* Fundo preto */
+@text-color: #00ffcc; /* Cor neon para o texto */
+@heading-color: #ff0066; /* Cor neon rosa para os títulos */
+@quote-border-color: #ff0066;
+@accent-color: #00ffcc; /* Detalhes em neon verde */
+
+@font-heading: 'Orbitron', sans-serif; /* Fonte futurística para títulos */
+@font-body: 'Roboto Mono', monospace; /* Fonte monoespaçada para corpo do texto */
+
+.aom {
+  background-color: @background-color;
+  color: @text-color;
+  font-family: @font-body;
+  line-height: 1.7;
+  padding: 2em;
+
+  /* Estilos para títulos */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: @heading-color;
+    font-family: @font-heading;
+    margin: 0.8em 0;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.1em;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    border-bottom: 3px solid @accent-color;
+    padding-bottom: 0.2em;
+  }
+
+  h2 {
+    font-size: 2em;
+    border-bottom: 2px solid @accent-color;
+    padding-bottom: 0.2em;
+  }
+
+  h3 {
+    font-size: 1.75em;
+    border-bottom: 1px solid @accent-color;
+    padding-bottom: 0.2em;
+  }
+
+  /* Parágrafos */
+  p {
+    margin: 1.5em 0;
+    text-indent: 0;
+  }
+
+  /* Imagens */
+  img {
+    border: 5px solid @text-color;
+    filter: grayscale(50%);
+    margin: 1em 0;
+    max-width: 100%;
+  }
+
+  /* Citações */
+  blockquote {
+    border-left: 5px solid @quote-border-color;
+    padding-left: 1em;
+    background-color: rgba(255, 0, 102, 0.1);
+    margin: 1.5em 0;
+    color: @quote-border-color;
+  }
+
+  /* Listas */
+  ul,
+  ol {
+    margin: 1.5em 0;
+    padding-left: 1.5em;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+  }
+
+  /* Links */
+  a {
+    color: @accent-color;
+    text-decoration: underline;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: darken(@accent-color, 10%);
+  }
+
+  /* Legendas */
+  figcaption {
+    font-size: 0.9em;
+    color: lighten(@text-color, 20%);
+    text-align: center;
+    margin-top: 0.5em;
+    font-style: italic;
+  }
+}

@@ -1,0 +1,466 @@
+{
+  "metadata": {
+    "code": "pt-br",
+    "name": "Português (BR)",
+    "flag": "/assets/flags/br.svg",
+    "country": "Brasil",
+    "timezone": "America/Sao_Paulo",
+    "direction": "ltr",
+    "currency": "BRL"
+  },
+  "command": {
+    "label": "Comando | Comandos",
+    "execute": "Executar",
+    "enterCommand": "Digite o comando",
+    "output": "Saída do comando",
+    "error": "Erro",
+    "added": "Comando adicionado à fila",
+    "complete": "Processo encerrado com código",
+    "notAllowed": "Comando não permitido",
+    "loading": "Carregando",
+    "processExitedWithCode": "Processo encerrado com código"
+  },
+  "analysis": {
+    "label": "Análise | Análises",
+    "analyze": "Analisar",
+    "analyzing": "Analisando",
+    "analyzed": "Analisado",
+    "pages": "Páginas Analisadas",
+    "page": "Página Analisada",
+    "elements": "Elementos Analisados",
+    "elementsToAnalyse": "Elementos a Analisar",
+    "readingTime": "Tempo de Leitura",
+    "speakingTime": "Tempo de Fala",
+    "average": "Média",
+    "minimum": "Mínimo",
+    "maximum": "Máximo",
+    "total": "Total",
+    "analysing": {
+      "label": "Analisando",
+      "elements": "Analisando Elementos"
+    }
+  },
+  "generate": {
+    "label": "Gerar",
+    "pdf": "Gerar PDF"
+  },
+  "dialog": {
+    "alert": {
+      "label": "Alerta",
+      "message": "Mensagem de alerta"
+    },
+    "confirm": {
+      "label": "Confirmação",
+      "message": "Mensagem de confirmação",
+      "yes": "Sim",
+      "no": "Não"
+    },
+    "prompt": {
+      "label": "Prompt",
+      "message": "Mensagem de prompt",
+      "placeholder": "Digite algo...",
+      "ok": "OK",
+      "cancel": "Cancelar"
+    },
+    "ok": "OK",
+    "areYouSure": "Você tem certeza?"
+  },
+  "library": {
+    "label": "Biblioteca | Bibliotecas"
+  },
+  "menu": {
+    "label": "Menu | Menus",
+    "open": "Abrir menu",
+    "close": "Fechar menu"
+  },
+  "editor": {
+    "label": "Editor | Editores",
+    "sourceCode": "Código-fonte",
+    "compile": "Compilar"
+  },
+  "total": {
+    "label": "Total | Totais",
+    "pages": "Total de Páginas",
+    "analyzedPages": "Páginas Analisadas",
+    "items": "Total de Itens",
+    "chapters": "Total de Capítulos",
+    "texts": "Total de Textos",
+    "elements": "Total de Elementos",
+    "words": "Total de Palavras",
+    "images": "Total de Imagens",
+    "loadedImages": "Imagens Carregadas",
+    "loadErrorImages": "Imagens com Erro de Carregamento",
+    "videos": "Total de Vídeos",
+    "loadedVideos": "Vídeos Carregados",
+    "loadErrorVideos": "Vídeos com Erro de Carregamento",
+    "notes": "Total de Notas",
+    "price": "Preço Total",
+    "cost": "Custo Total",
+    "income": "Renda Total",
+    "expenses": "Despesas Totais",
+    "revenue": "Receita Total",
+    "profit": "Lucro Total",
+    "loss": "Perda Total",
+    "growth": "Crescimento Total",
+    "sales": "Total de vendas",
+    "orders": "Total de pedidos",
+    "clients": "Total de clientes",
+    "users": "Total de usuários",
+    "authors": "Total de autores",
+    "books": "Total de livros",
+    "categories": "Total de categorias",
+    "languages": "Total de idiomas",
+    "formats": "Total de formatos"
+  },
+  "user": {
+    "label": "Usuário | Usuários",
+    "dashboard": "Painel administrativo",
+    "menu": {
+      "label": "Menu | Menus",
+      "userMenu": "Menu do usuário"
+    },
+    "account": {
+      "label": "Conta | Contas"
+    },
+    "manageAccount": "Gerenciar sua conta",
+    "downloads": {
+      "label": "Download | Downloads"
+    },
+    "subscriptions": {
+      "label": "Assinatura | Assinaturas"
+    },
+    "history": "Histórico",
+    "lastActivity": "Última atividade",
+    "lastAccess": "Último acesso",
+    "lastAccessIn": "Seu último acesso foi em",
+    "status": {
+      "label": "Status do usuário | Status dos usuários",
+      "online": "Online",
+      "offline": "Offline",
+      "away": "Ausente",
+      "busy": "Ocupado"
+    },
+    "role": {
+      "super": {
+        "label": "Super | Supers"
+      },
+      "admin": {
+        "label": "Administrador | Administradores"
+      },
+      "writer": {
+        "label": "Escritor | Escritores"
+      },
+      "editor": {
+        "label": "Editor | Editores"
+      },
+      "user": {
+        "label": "Usuário | Usuários"
+      },
+      "visitor": {
+        "label": "Visitante | Visitantes"
+      }
+    }
+  },
+  "notification": {
+    "label": "Notificação | Notificações",
+    "seeAll": "Ver todas as notificações",
+    "allLoaded": "Todas as notificações foram carregadas",
+    "showNotifications": "Exibir notificações"
+  },
+  "chat": {
+    "label": "Chat | Chats",
+    "show": "Exibir chat",
+    "allLoaded": "Todos os chats foram carregados",
+    "startNewChat": "Iniciar novo chat",
+    "noChatsAvailable": "Nenhum chat disponível",
+    "sendMessage": "Enviar mensagem",
+    "newMessage": "Nova mensagem"
+  },
+  "priority": {
+    "low": "Baixa",
+    "medium": "Média",
+    "high": "Alta",
+    "urgent": "Urgente"
+  },
+  "social": {
+    "label": "Social | Sociais",
+    "friends": {
+      "label": "Amigo | Amigos"
+    }
+  },
+  "commerce": {
+    "label": "Comércio | Comércios",
+    "growth": "Crescimento",
+    "sales": {
+      "label": "Venda | Vendas"
+    },
+    "projections": {
+      "label": "Projeção | Projeções"
+    },
+    "product": {
+      "label": "Produto | Produtos",
+      "addProduct": "Adicionar Produto",
+      "editProduct": "Editar Produto",
+      "deleteProduct": "Excluir Produto",
+      "productName": "Nome do Produto",
+      "productPrice": "Preço do Produto",
+      "productDescription": "Descrição do Produto",
+      "productCategory": "Categoria do Produto"
+    },
+    "order": {
+      "label": "Pedido | Pedidos",
+      "orderNumber": "Número do Pedido",
+      "orderDate": "Data do Pedido",
+      "orderStatus": "Status do Pedido",
+      "orderTotal": "Total do Pedido",
+      "orderDetails": "Detalhes do Pedido"
+    },
+    "customer": {
+      "label": "Cliente | Clientes",
+      "customerName": "Nome do Cliente",
+      "customerEmail": "Email do Cliente",
+      "customerPhone": "Telefone do Cliente",
+      "customerAddress": "Endereço do Cliente"
+    }
+  },
+  "blog": {
+    "label": "Blog | Blogs",
+    "author": {
+      "label": "Autor | Autores"
+    },
+    "post": {
+      "label": "Postagem | Postagens",
+      "addPost": "Adicionar Postagem",
+      "editPost": "Editar Postagem",
+      "deletePost": "Excluir Postagem",
+      "postTitle": "Título da Postagem",
+      "postContent": "Conteúdo da Postagem",
+      "postCategory": "Categoria da Postagem",
+      "postTags": "Tags da Postagem"
+    },
+    "comment": {
+      "label": "Comentário | Comentários",
+      "addComment": "Adicionar Comentário",
+      "editComment": "Editar Comentário",
+      "deleteComment": "Excluir Comentário",
+      "commentAuthor": "Autor do Comentário",
+      "commentContent": "Conteúdo do Comentário"
+    },
+    "category": {
+      "label": "Categoria | Categorias",
+      "addCategory": "Adicionar Categoria",
+      "editCategory": "Editar Categoria",
+      "deleteCategory": "Excluir Categoria",
+      "categoryName": "Nome da Categoria"
+    },
+    "tag": {
+      "label": "Tag | Tags",
+      "addTag": "Adicionar Tag",
+      "editTag": "Editar Tag",
+      "deleteTag": "Excluir Tag",
+      "tagName": "Nome da Tag"
+    }
+  },
+  "authentication": {
+    "welcomeBack": "Bem-vindo de volta!",
+    "logIntoAccount": "Faça login na sua conta",
+    "email": "Email",
+    "password": "Senha",
+    "forgotPassword": "Esqueceu a senha?",
+    "logIn": "Entrar",
+    "orContinueWith": "Ou continue com",
+    "dontHaveAccount": "Não tem uma conta?",
+    "signUp": "Inscrever-se",
+    "createAccount": "Criar conta",
+    "signUpToGetStarted": "Inscreva-se para começar",
+    "confirmPassword": "Confirmar senha",
+    "alreadyHaveAccount": "Já tem uma conta?",
+    "resetPassword": "Redefinir senha",
+    "enterYourEmail": "Digite seu email para redefinir sua senha",
+    "sendResetLink": "Enviar link de redefinição",
+    "enterCode": "Digite o código enviado para seu email",
+    "confirmCode": "Confirmar código",
+    "newPassword": "Nova senha",
+    "confirmNewPassword": "Confirmar nova senha",
+    "saveNewPassword": "Salvar nova senha",
+    "code": "Código de autenticação",
+    "verifySMS": "Verificar SMS",
+    "enterSMSCode": "Digite o código enviado por SMS",
+    "verifyEmail": "Verificar Email",
+    "enterEmailCode": "Digite o código enviado para seu email",
+    "verifyAuthenticatorApp": "Verificar Aplicativo Autenticador",
+    "enterAuthenticatorCode": "Digite o código do aplicativo autenticador",
+    "sendVerificationCode": "Enviar código de verificação",
+    "verify": "Verificar",
+    "verifyAccount": "Verificar Conta",
+    "enterVerificationCode": "Digite o código de verificação enviado",
+    "resendCode": "Reenviar código"
+  },
+  "build": {
+    "label": "Construir",
+    "build": "Construir projeto",
+    "building": "Construindo...",
+    "buildSuccess": "Projeto construído com sucesso",
+    "buildError": "Erro ao construir projeto",
+    "percentage": "Porcentagem de construção",
+    "progress": "Progresso de construção",
+    "completed": "Construção concluída",
+    "time": "Tempo de construção",
+    "start": "Iniciar construção",
+    "stop": "Parar construção",
+    "run": "Executar construção"
+  },
+  "layout": {
+    "screen": {
+      "label": "Tela | Telas",
+      "fullscreen": {
+        "label": "Tela cheia",
+        "enter": "Entrar em tela cheia",
+        "exit": "Sair da tela cheia"
+      }
+    },
+    "theme": {
+      "label": "Tema | Temas",
+      "switchTheme": "Alternar tema",
+      "current": "Tema atual",
+      "toggleDarkMode": "Alternar modo escuro",
+      "toggleLightMode": "Alternar modo claro",
+      "mode": {
+        "label": "Modo | Modos",
+        "dark": "Escuro",
+        "light": "Claro",
+        "switchToLight": "Alternar para modo claro",
+        "switchToDark": "Alternar para modo escuro"
+      }
+    }
+  },
+  "language": {
+    "name": "Português (BR)",
+    "select": "Selecionar idioma"
+  },
+  "online": "Online",
+  "pricing": {
+    "label": "Preço | Preços"
+  },
+  "faq": "FAQ",
+  "search": "Pesquisar",
+  "loading": "Carregando...",
+  "logout": "Sair",
+  "login": "Entrar",
+  "noMoreItems": "Não há mais itens",
+  "notFound": "Não encontrado",
+  "summary": "Resumo",
+  "statistics": "Estatísticas",
+  "copyright": {
+    "label": "Direitos autorais",
+    "allRightsReserved": "Todos os direitos reservados"
+  },
+  "to": {
+    "label": "Para",
+    "select": "Para selecionar",
+    "close": "Para Fechar"
+  },
+  "new": {
+    "label": "Novo | Novos",
+    "female": {
+      "label": "Nova | Novas"
+    }
+  },
+  "colors": {
+    "label": "Cor | Cores",
+    "red": "Vermelho",
+    "green": "Verde",
+    "blue": "Azul",
+    "yellow": "Amarelo",
+    "orange": "Laranja",
+    "purple": "Roxo",
+    "black": "Preto",
+    "white": "Branco",
+    "gray": "Cinza"
+  },
+  "chart": {
+    "label": "Gráfico | Gráficos",
+    "bar": "Gráfico de Barras",
+    "bubble": "Gráfico de Bolhas",
+    "line": "Gráfico de Linhas",
+    "pie": "Gráfico de Pizza",
+    "area": "Gráfico de Área",
+    "scatter": "Gráfico de Dispersão",
+    "doughnut": "Gráfico de Rosca",
+    "polar": "Gráfico Polar",
+    "radar": "Gráfico de Radar",
+    "apexCharts": "Apex Charts",
+    "donut": "Gráfico de Rosca",
+    "heatmap": "Gráfico de Mapa de Calor",
+    "radialbar": "Gráfico de Barra Radial",
+    "candlestick": "Gráfico de Velas",
+    "column": "Gráfico de Colunas",
+    "mixed": "Gráfico Misto",
+    "funnel": "Gráfico de Funil",
+    "boxplot": "Gráfico de Caixa",
+    "treemap": "Gráfico de Árvore",
+    "slope": "Gráfico de Inclinação",
+    "range": "Gráfico de Faixa",
+    "timeline": "Gráfico de Linha do Tempo"
+  },
+  "profile": {
+    "label": "Perfil | Perfis"
+  },
+  "settings": {
+    "label": "Configuração | Configurações"
+  },
+  "greeting": {
+    "welcome": "Bem-vindo",
+    "goodMorning": "Bom dia",
+    "goodAfternoon": "Boa tarde",
+    "goodEvening": "Boa noite",
+    "hello": "Olá"
+  },
+  "graph": {
+    "label": "Gráfico | Gráficos",
+    "bar": "Gráfico de Barras",
+    "line": "Gráfico de Linhas",
+    "pie": "Gráfico de Pizza",
+    "area": "Gráfico de Área",
+    "scatter": "Gráfico de Dispersão"
+  },
+  "table": {
+    "label": "Tabela | Tabelas",
+    "noData": "Sem dados disponíveis",
+    "rowsPerPage": "Linhas por página"
+  },
+  "message": {
+    "label": "Mensagem | Mensagens",
+    "success": "Operação realizada com sucesso",
+    "error": "Ocorreu um erro",
+    "warning": "Atenção",
+    "info": "Informação"
+  },
+  "preview": {
+    "label": "Prévia | Prévias"
+  },
+  "dashboard": {
+    "label": "Painel | Painéis",
+    "title": "Painel administrativo",
+    "summary": "Resumo",
+    "orders": "Pedidos",
+    "newOrders": "Novos Pedidos",
+    "clients": "Clientes",
+    "newClients": "Novos Clientes",
+    "sales": "Vendas",
+    "growth": "Crescimento",
+    "profit": "Lucro",
+    "todayProfit": "Lucro de Hoje",
+    "statistics": "Estatísticas",
+    "statusStatistics": "Estatísticas de Status",
+    "incomeStatistics": "Estatísticas de Renda",
+    "transactions": "Transações",
+    "salesOrdersRevenue": "Receita de Pedidos de Venda",
+    "salesAnalytics": "Análise de Vendas",
+    "cpu": "CPU",
+    "memory": "Memória",
+    "monthlyIncrease": "Aumento Mensal",
+    "registerUser": "Registrar Usuário",
+    "premiumUser": "Usuário Premium"
+  }
+}
