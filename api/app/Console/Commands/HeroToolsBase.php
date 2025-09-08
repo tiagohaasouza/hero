@@ -3,6 +3,7 @@ namespace App\Console\Commands;
 
 
 use Illuminate\Console\Command;
+use App\Hero\Tools\EnvEditor;
 
 
 abstract class HeroToolsBase extends Command
@@ -26,24 +27,21 @@ abstract class HeroToolsBase extends Command
     }
 
 
-    protected function updateEnv(array $pairs, bool $unset = false)
+    protected function applyEnv(array $pairs, bool $unset = false, bool $dry = false)
     {
-        $envPath = base_path('.env');
-        if (!file_exists($envPath)) return false;
-        $contents = file_get_contents($envPath);
-        foreach ($pairs as $k => $v) {
-            $pattern = "/^".preg_quote($k,'/')."=.*/m";
-            if ($unset) {
-                $contents = preg_replace($pattern, '', $contents);
-            } else {
-                $line = $k.'='.($v === '' ? '' : $v);
-                if (preg_match($pattern, $contents)) $contents = preg_replace($pattern, $line, $contents);
-                else $contents .= "\n".$line;
-            }
+        if (empty($pairs)) return;
+        if ($dry) {
+            if ($unset) $this->table(['Remove key'], collect(array_keys($pairs))->map(fn($k)=>[$k])->all());
+            else $this->table(['Key','Value'], collect($pairs)->map(fn($v,$k)=>[$k,$v])->all());
+            return;
         }
-        $contents = preg_replace("/\n{3,}/","\n\n",$contents);
-        file_put_contents($envPath, trim($contents)."\n");
-        return true;
+        $editor = new EnvEditor();
+        if ($unset) {
+            foreach (array_keys($pairs) as $k) $editor->remove($k);
+        } else {
+            foreach ($pairs as $k=>$v) $editor->set($k, $v);
+        }
+        $editor->save();
     }
 
 

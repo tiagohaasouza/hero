@@ -2,9 +2,6 @@
 namespace App\Console\Commands;
 
 
-use Illuminate\Support\Str;
-
-
 class HeroToolsInstall extends HeroToolsBase
 {
     protected $signature = 'hero:tools:install {--include=} {--all} {--no-env} {--dry-run} {--with-docker}';
@@ -30,8 +27,7 @@ class HeroToolsInstall extends HeroToolsBase
 
             if (!$noEnv && !empty($def['env'])) {
                 $this->line(' • Applying .env changes');
-                if ($dry) $this->table(['Key','Value'], collect($def['env'])->map(fn($v,$k)=>[$k,$v])->all());
-                else $this->updateEnv($def['env']);
+                $this->applyEnv($def['env'], false, $dry);
             }
 
 

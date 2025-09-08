@@ -27,8 +27,7 @@ class HeroToolsUninstall extends HeroToolsBase
 
             if (!$keepEnv && !empty($def['env'])) {
                 $this->line(' • Removing .env keys');
-                if ($dry) $this->table(['Key'], collect(array_keys($def['env']))->map(fn($k)=>[$k])->all());
-                else $this->updateEnv(array_fill_keys(array_keys($def['env']), ''), true);
+                $this->applyEnv(array_fill_keys(array_keys($def['env']), ''), true, $dry);
             }
 
 
