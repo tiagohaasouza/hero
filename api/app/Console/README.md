@@ -11,39 +11,47 @@ Conjunto de comandos Artisan para instalar/desinstalar ferramentas auxiliares in
 2) Registre o provider em `config/app.php`:
    'providers' => [ App\Providers\HeroToolsServiceProvider::class, ... ]
 3) Publique a config (opcional):
+```bash
    php artisan vendor:publish --tag=hero-tools-config
-
+```
 
 ## Comandos
 
 
 Listar ferramentas suportadas:
+```bash
 php artisan hero:tools:list
-
-
+docker exec hero-api php artisan hero:tools:list
+```
 Instalar ferramentas específicas (ex.: Mailhog + Meilisearch):
+```bash
 php artisan hero:tools:install --include=mailhog,meilisearch
-
+```
 
 Instalar todas as ferramentas:
+```bash
 php artisan hero:tools:install --all
-
+```
 
 Instalar sem alterar .env (apenas mostrar o que seria feito):
+```bash
 php artisan hero:tools:install --include=minio --dry-run --no-env
-
+```
 
 Instalar e imprimir os comandos docker correspondentes:
+```bash
 php artisan hero:tools:install --include=redis-commander --with-docker
-
+```
 
 Desinstalar ferramentas específicas e remover chaves do .env:
+```bash
 php artisan hero:tools:uninstall --include=meilisearch
-
+```
 
 Desinstalar todas mas manter as chaves do .env:
+```bash
 php artisan hero:tools:uninstall --all --keep-env
-
+```
 
 ## Observações
 
