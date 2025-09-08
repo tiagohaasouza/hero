@@ -12,6 +12,17 @@ return [
                 'MAIL_PASSWORD' => 'null',
                 'MAIL_ENCRYPTION' => 'null'
             ],
+            'compose' => [
+                'services' => [
+                    'hero-mailhog' => [
+                        'image' => 'mailhog/mailhog:latest',
+                        'container_name' => 'hero-mailhog',
+                        'restart' => 'unless-stopped',
+                        'ports' => ['8025:8025','1025:1025'],
+                        'networks' => ['hero_net']
+                    ]
+                ]
+            ]
         ],
         'redis-commander' => [
             'title' => 'Redis Commander (Redis UI)',
@@ -20,11 +31,36 @@ return [
                 'REDIS_COMMANDER_USER' => '',
                 'REDIS_COMMANDER_PASSWORD' => ''
             ],
+            'compose' => [
+                'services' => [
+                    'hero-redis-commander' => [
+                        'image' => 'rediscommander/redis-commander:latest',
+                        'container_name' => 'hero-redis-commander',
+                        'restart' => 'unless-stopped',
+                        'environment' => ['REDIS_HOSTS=local:hero-redis:6379'],
+                        'ports' => ['8081:8081'],
+                        'networks' => ['hero_net']
+                    ]
+                ]
+            ]
         ],
         'adminer' => [
             'title' => 'Adminer (DB UI)',
             'docker' => ['service' => 'hero-adminer'],
             'env' => [],
+            'compose' => [
+                'services' => [
+                    'hero-adminer' => [
+                        'image' => 'adminer:latest',
+                        'container_name' => 'hero-adminer',
+                        'restart' => 'unless-stopped',
+                        'environment' => ['ADMINER_DEFAULT_SERVER=hero-db'],
+                        'ports' => ['8080:8080'],
+                        'depends_on' => ['hero-db'],
+                        'networks' => ['hero_net']
+                    ]
+                ]
+            ]
         ],
         'meilisearch' => [
             'title' => 'Meilisearch (Scout driver)',
@@ -37,6 +73,20 @@ return [
             'laravel' => [
                 'composer' => ['meilisearch/meilisearch-php:^1.8', 'laravel/scout:^10.0']
             ],
+            'compose' => [
+                'services' => [
+                    'hero-meili' => [
+                        'image' => 'getmeili/meilisearch:v1.7',
+                        'container_name' => 'hero-meili',
+                        'restart' => 'unless-stopped',
+                        'environment' => ['MEILI_NO_ANALYTICS=true'],
+                        'ports' => ['7700:7700'],
+                        'volumes' => ['meili_data:/meili_data'],
+                        'networks' => ['hero_net']
+                    ]
+                ],
+                'volumes' => ['meili_data' => null]
+            ]
         ],
         'minio' => [
             'title' => 'MinIO (S3 local)',
@@ -50,6 +100,21 @@ return [
                 'AWS_USE_PATH_STYLE_ENDPOINT' => 'true',
                 'AWS_ENDPOINT' => 'http://hero-minio:9000'
             ],
+            'compose' => [
+                'services' => [
+                    'hero-minio' => [
+                        'image' => 'minio/minio:latest',
+                        'container_name' => 'hero-minio',
+                        'restart' => 'unless-stopped',
+                        'command' => ['server','/data','--console-address',':9001'],
+                        'environment' => ['MINIO_ROOT_USER=${MINIO_ROOT_USER:-minioadmin}','MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD:-minioadmin}'],
+                        'ports' => ['9000:9000','9001:9001'],
+                        'volumes' => ['minio_data:/data'],
+                        'networks' => ['hero_net']
+                    ]
+                ],
+                'volumes' => ['minio_data' => null]
+            ]
         ],
         'horizon' => [
             'title' => 'Laravel Horizon (Redis queues UI)',
@@ -62,7 +127,7 @@ return [
             ],
             'laravel' => [
                 'composer' => ['laravel/horizon:^5.0']
-            ],
+            ]
         ]
     ]
 ];
