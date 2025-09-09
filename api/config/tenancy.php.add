@@ -1,0 +1,5 @@
+// Ajustes esperados no config/tenancy.php:
+// - identification middleware por domínio (InitializeTenancyByDomain)
+// - bootstrappers: Cache, Filesystem, Queue, Redis para isolamento
+// - tenant_database: true (multi-db), connection 'tenant'
+// - central_domains: ['api.hero.localhost', 'hero.localhost']

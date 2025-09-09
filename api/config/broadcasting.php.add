@@ -1,0 +1,3 @@
+// Ajustes esperados no config/broadcasting.php para Reverb:
+// 'default' => env('BROADCAST_DRIVER', 'reverb'),
+// Adicionar credenciais REVERB_* conforme .env

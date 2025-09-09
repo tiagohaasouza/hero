@@ -1,0 +1,3 @@
+// Adicione estas linhas ao Kernel.php -> protected $commands = [ ... ]:
+\App\Console\Commands\TenantCreate::class,
+\App\Console\Commands\TenantDelete::class,
