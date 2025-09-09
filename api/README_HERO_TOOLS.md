@@ -1,84 +1,59 @@
-# Hero Tools — Artisan (Laravel 12)
+# Hero Tools — v2 (Laravel 12)
 
-Comandos Artisan para instalar/desinstalar ferramentas e editar o docker-compose.yml.
+Comandos Artisan para instalar/desinstalar ferramentas, **aplicar blocos no docker-compose.yml**, e **listar URLs** via rotas e CLI.
 
 ## Instalação
-1) Copie estes arquivos para **/api** mantendo os caminhos.
-2) Registre o provider em **/api/bootstrap/providers.php**:
+1) Extraia este pacote na raiz do projeto (os caminhos já começam com `api/`).
+2) Registre o provider em `api/bootstrap/providers.php`:
 ```
 <?php
 
 return [
-    // outros providers ...
+    // ...
     App\Providers\HeroToolsServiceProvider::class,
 ];
 ```
-3) (Opcional) Publique a config:
-```
-php artisan vendor:publish --tag=hero-tools-config
-```
-4) Para editar docker-compose via comando, instale a dependência YAML:
+3) Se for usar edição do compose, instale:
 ```
 composer require symfony/yaml --dev
 ```
 
-## Comandos
+## Rotas
+- `GET /tools` → página HTML com links das ferramentas
+- `GET /tools/json` → JSON com todas
+- `GET /tools/{key}` → HTML de uma ferramenta
+- Dica: defina `APP_URL` no `.env` para que os hosts sejam montados corretamente.
 
-Listar ferramentas:
+## CLI
+Listar (com URLs):
 ```
-php artisan hero:tools:list
-```
-
-Instalar ferramentas específicas (altera .env e mostra pacotes Composer se houver):
-```
-php artisan hero:tools:install --include=mailhog,meilisearch
-```
-
-Instalar todas:
-```
-php artisan hero:tools:install --all
+php artisan hero:tools:list --urls
 ```
 
-Dry-run sem alterar .env:
+Instalar e aplicar blocos do compose:
 ```
-php artisan hero:tools:install --include=minio --dry-run --no-env
-```
-
-Imprimir comandos docker após instalar:
-```
-php artisan hero:tools:install --include=redis-commander --with-docker
+php artisan hero:tools:install --include=mailhog,meilisearch --compose
+# ou
+php artisan hero:tools:install --all --compose
 ```
 
-Desinstalar e remover chaves do .env:
+Remover e retirar blocos do compose:
 ```
-php artisan hero:tools:uninstall --include=meilisearch
-```
-
-Desinstalar todas mantendo o .env:
-```
-php artisan hero:tools:uninstall --all --keep-env
+php artisan hero:tools:uninstall --include=minio --compose
 ```
 
-### Editar docker-compose.yml (merge seguro)
-Aplicar blocos de serviços no docker-compose.yml (com backup):
+Aplicar/remover manualmente:
 ```
 php artisan hero:tools:compose --include=mailhog,meilisearch
-```
-Remover blocos:
-```
 php artisan hero:tools:compose --include=minio --remove
 ```
+
 Dry-run:
 ```
 php artisan hero:tools:compose --include=adminer --dry-run
 ```
-Arquivo alternativo:
-```
-php artisan hero:tools:compose --include=mailhog --file=./docker/docker-compose.dev.yml
-```
 
-## Notas de segurança
-- O merge do compose cria **backup automático** (ex.: docker-compose.yml.bak.YYYYmmdd-HHMMSS) — restaure se necessário.
-- Listas (ports, volumes, depends_on, environment) são **deduplicadas**.
-- Em conflitos de chave **escalares**, o bloco **sobrescreve** o valor existente para o serviço alvo.
-- Revise o plano com `--dry-run` antes de aplicar em ambientes sensíveis.
+## Segurança do compose
+- Backup automático: `docker-compose.yml.bak.YYYYmmdd-HHMMSS`
+- Merge idempotente; listas (ports/volumes/depends_on/environment) deduplicadas
+- Scalars do bloco sobrescrevem os existentes para o serviço alvo

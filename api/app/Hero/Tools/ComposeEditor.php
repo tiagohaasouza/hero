@@ -12,12 +12,49 @@ class ComposeEditor
 
     public function __construct(?string $path = null)
     {
-        $this->path = $path ?: base_path('docker-compose.yml');
-        if (!file_exists($this->path)) {
-            throw new \RuntimeException("docker-compose.yml not found at {$this->path}");
+        $candidates = [];
+
+        // Highest priority: explicit arg
+        if ($path) {
+            $candidates[] = $path;
+            $candidates[] = dirname($path) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'docker-compose.yml';
         }
+
+        // Env/config overrides
+        $envPath = getenv('HERO_COMPOSE_PATH') ?: null;
+        if ($envPath) $candidates[] = $envPath;
+
+        $cfg = \function_exists('config') ? (config('hero_tools.compose_path') ?: null) : null;
+        if ($cfg) $candidates[] = $cfg;
+
+        // Laravel base and parent
+        if (\function_exists('base_path')) {
+            $candidates[] = base_path('docker-compose.yml');
+            $parent = realpath(base_path('..'));
+            if ($parent) $candidates[] = $parent . DIRECTORY_SEPARATOR . 'docker-compose.yml';
+        }
+
+        // Common project root
+        $candidates[] = '/var/www/html/docker-compose.yml';
+
+        // Normalize and pick first existing
+        $picked = null;
+        foreach ($candidates as $cand) {
+            if (!$cand) continue;
+            $cand = str_replace(['//','\\'], ['/','/'], $cand);
+            if (file_exists($cand)) { $picked = $cand; break; }
+        }
+
+        if (!$picked) {
+            $msg = "docker-compose.yml not found. Searched:\n- " . implode("\n- ", array_unique(array_map('strval', $candidates)));
+            throw new \RuntimeException($msg);
+        }
+
+        $this->path = $picked;
         $this->yaml = $this->read();
     }
+
+    public function getPath(): string { return $this->path; }
 
     public function read(): array
     {
@@ -53,11 +90,6 @@ class ComposeEditor
         }
     }
 
-    /**
-     * @param array $blocks keys: services/volumes/networks
-     * @param bool $remove remove instead of add/update
-     * @return array summary
-     */
     public function apply(array $blocks, bool $remove = false): array
     {
         $this->ensureKeys();
@@ -67,7 +99,6 @@ class ComposeEditor
             'networks' => ['added' => [], 'removed' => [], 'skipped' => []],
         ];
 
-        // Services
         if (!empty($blocks['services']) && is_array($blocks['services'])) {
             foreach ($blocks['services'] as $name => $def) {
                 if ($remove) {
@@ -89,7 +120,6 @@ class ComposeEditor
             }
         }
 
-        // Volumes
         if (!empty($blocks['volumes']) && is_array($blocks['volumes'])) {
             foreach ($blocks['volumes'] as $v => $vdef) {
                 if ($remove) {
@@ -110,7 +140,6 @@ class ComposeEditor
             }
         }
 
-        // Networks
         if (!empty($blocks['networks']) && is_array($blocks['networks'])) {
             foreach ($blocks['networks'] as $n => $ndef) {
                 if ($remove) {
@@ -142,12 +171,12 @@ class ComposeEditor
             }
             if (in_array($k, ['environment', 'env_file'], true)) {
                 $base[$k] = $this->mergeEnv($base[$k], $v);
-            } elseif (in_array($k, ['volumes', 'ports', 'depends_on', 'networks'], true)) {
+            } elseif (in_array($k, ['volumes', 'ports', 'depends_on', 'networks', 'command', 'entrypoint'], true)) {
                 $base[$k] = $this->mergeList($base[$k], $v);
             } elseif (is_array($v) && is_array($base[$k])) {
                 $base[$k] = $this->deepMergeService($base[$k], $v);
             } else {
-                $base[$k] = $v; // override scalars
+                $base[$k] = $v;
             }
         }
         return $base;
@@ -159,7 +188,7 @@ class ComposeEditor
         $b = is_array($b) ? $b : [$b];
         $out = $a;
         foreach ($b as $item) {
-            if (!in_array($item, $out, true)) $out[] = $item;
+            if (!in_array($item, $out, true)) { $out[] = $item; }
         }
         return $out;
     }

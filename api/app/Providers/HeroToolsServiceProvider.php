@@ -29,5 +29,10 @@ class HeroToolsServiceProvider extends ServiceProvider
                 base_path('config/hero_tools.php') => config_path('hero_tools.php')
             ], 'hero-tools-config');
         }
+
+        $routesPath = base_path('routes/tools.php');
+        if (file_exists($routesPath)) {
+            $this->loadRoutesFrom($routesPath);
+        }
     }
 }
