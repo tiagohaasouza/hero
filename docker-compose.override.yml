@@ -77,11 +77,6 @@ services:
   hero-db:
     env_file:
       - ./api/.env
-    environment:
-      MYSQL_DATABASE: '$${DB_DATABASE}'
-      MYSQL_USER: '$${DB_USERNAME}'
-      MYSQL_PASSWORD: '$${DB_PASSWORD}'
-      MYSQL_ROOT_PASSWORD: '$${DB_ROOT_PASSWORD:-root}'
 volumes:
   meili_data: null
   minio_data: null

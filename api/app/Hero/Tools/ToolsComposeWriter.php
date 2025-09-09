@@ -13,13 +13,9 @@ class ToolsComposeWriter
             $services['hero-db'] = [];
         }
         $svc = $services['hero-db'];
+        // MariaDB lê MYSQL_* no boot; eles virão do env_file (/api/.env) que sincronizaremos no install
         $svc['env_file'] = ["./api/.env"];
-        $svc['environment'] = [
-            'MYSQL_DATABASE'      => '$${DB_DATABASE}',
-            'MYSQL_USER'          => '$${DB_USERNAME}',
-            'MYSQL_PASSWORD'      => '$${DB_PASSWORD}',
-            'MYSQL_ROOT_PASSWORD' => '$${DB_ROOT_PASSWORD:-root}',
-        ];
+        // Removemos o mapeamento environment para evitar valores literais como '${DB_USERNAME}'
         $services['hero-db'] = $svc;
         $blocks['services'] = $services;
         return $blocks;

@@ -9,7 +9,7 @@ use App\Hero\Tools\ToolsComposeWriter;
 class HeroToolsInstall extends HeroToolsBase
 {
     protected $signature = 'hero:tools:install {--include=} {--all} {--no-env} {--dry-run} {--with-docker} {--compose} {--compose-file=} {--compose-file-mode=override} {--no-backup} {--lazy} {--eager}';
-    protected $description = 'Instala ferramentas: .env e (opcional) gera docker-compose.override.yml (DEFAULT). Lazy por padrão. Backups em storage/hero/backups.';
+    protected $description = 'Instala ferramentas: .env e (opcional) gera docker-compose.override.yml. Lazy por padrão. Backups em storage/hero/backups.';
 
     protected function pickComposePath(): ?string
     {
@@ -37,7 +37,7 @@ class HeroToolsInstall extends HeroToolsBase
     {
         $dir = dirname($baseComposePath);
         $file = $dir . DIRECTORY_SEPARATOR . ($mode === 'tools' ? 'docker-compose.tools.yml' : 'docker-compose.override.yml');
-        $yaml = \App\Hero\Tools\ToolsComposeWriter::toYaml($blocks);
+        $yaml = ToolsComposeWriter::toYaml($blocks);
         if (@file_put_contents($file, $yaml) !== false) return $file;
         return null;
     }
@@ -46,9 +46,24 @@ class HeroToolsInstall extends HeroToolsBase
     {
         $file = storage_path('hero/compose/' . ($mode === 'tools' ? 'docker-compose.tools.yml' : 'docker-compose.override.yml'));
         @mkdir(dirname($file), 0775, true);
-        $yaml = \App\Hero\Tools\ToolsComposeWriter::toYaml($blocks);
+        $yaml = ToolsComposeWriter::toYaml($blocks);
         if (@file_put_contents($file, $yaml) !== false) return $file;
         return null;
+    }
+
+    protected function ensureMysqlVars(EnvEditor $env): void
+    {
+        // Sincroniza MYSQL_* no /api/.env com base nos DB_* atuais
+        $db  = $env->get('DB_DATABASE') ?? 'hero';
+        $usr = $env->get('DB_USERNAME') ?? 'hero';
+        $pwd = $env->get('DB_PASSWORD') ?? 'hero';
+        $root = $env->get('DB_ROOT_PASSWORD') ?? 'root';
+
+        // Apenas define se ausentes, para não sobrescrever decisão do usuário
+        if ($env->get('MYSQL_DATABASE') === null)      $env->set('MYSQL_DATABASE', $db);
+        if ($env->get('MYSQL_USER') === null)          $env->set('MYSQL_USER', $usr);
+        if ($env->get('MYSQL_PASSWORD') === null)      $env->set('MYSQL_PASSWORD', $pwd);
+        if ($env->get('MYSQL_ROOT_PASSWORD') === null) $env->set('MYSQL_ROOT_PASSWORD', $root);
     }
 
     public function handle(): int
@@ -61,7 +76,7 @@ class HeroToolsInstall extends HeroToolsBase
         $dry = (bool)$this->option('dry-run');
         $applyCompose = (bool)$this->option('compose');
         $noBackup = (bool)$this->option('no-backup');
-        $mode = (string)$this->option('compose-file-mode') ?: 'override'; // DEFAULT override
+        $mode = (string)$this->option('compose-file-mode') ?: 'override';
 
         $tools = $this->resolveTools($include, $all);
         if (empty($tools)) { $this->warn('Nothing to install. Use --include or --all.'); return self::SUCCESS; }
@@ -75,17 +90,14 @@ class HeroToolsInstall extends HeroToolsBase
         $composeBlocks = ['services'=>[], 'volumes'=>[], 'networks'=>[]];
         $envEditor = new EnvEditor();
 
+        // Passo crítico: garantir MYSQL_* no /api/.env
+        if (!$noEnv && !$dry) {
+            $this->line('  • Syncing MYSQL_* with DB_* in /api/.env');
+            $this->ensureMysqlVars($envEditor);
+        }
+
         foreach ($tools as $key => $def) {
             $this->info("Installing: " . ($def['title'] ?? $key) . " ($key)");
-            if (!$noEnv && !empty($def['urls'])) {
-                foreach ($def['urls'] as $u) {
-                    if (!empty($u['env_port']) && !empty($u['port'])) {
-                        $name = (string)$u['env_port'];
-                        $cur = $envEditor->get($name);
-                        if ($cur === null || $cur === '') $envEditor->set($name, (string)$u['port']);
-                    }
-                }
-            }
             if (!$noEnv && !empty($def['env']) && is_array($def['env'])) {
                 $this->line('  • Applying .env changes');
                 $this->applyEnv($def['env'], false, $dry);
@@ -109,13 +121,12 @@ class HeroToolsInstall extends HeroToolsBase
 
         if ($applyCompose) {
             try {
-                $editor = new ComposeEditor($this->pickComposePath()); // detecta onde está o base
+                $editor = new ComposeEditor($this->pickComposePath());
                 $base = $editor->getPath();
                 $out = $this->writeAddonComposeBeside($base, $composeBlocks, $mode);
                 if ($out) {
                     $this->info(($mode === 'tools' ? 'docker-compose.tools.yml' : 'docker-compose.override.yml') . ' written: ' . $out);
-                    if ($mode === 'tools') $this->line('Use: docker compose -f docker-compose.yml -f docker-compose.tools.yml up -d');
-                    else $this->line('Use: docker compose up -d (override auto-carregado)');
+                    $this->line('Use: docker compose up -d');
                 } else {
                     throw new \RuntimeException('Failed to write add-on compose beside base file.');
                 }
