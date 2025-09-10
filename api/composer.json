@@ -11,14 +11,14 @@
     "require": {
         "php": "^8.3",
         "laravel/framework": "^12.0",
-        "laravel/passport": "*",
+        "laravel/passport": "^13",
         "laravel/reverb": "^1.0",
         "laravel/scout": "^10.19",
         "laravel/tinker": "^2.10.1",
         "meilisearch/meilisearch-php": "^1.15",
         "paragonie/sodium_compat_ext_sodium": "^1.0",
         "spatie/laravel-permission": "*",
-        "stancl/tenancy": "*"
+        "stancl/tenancy": "^3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
